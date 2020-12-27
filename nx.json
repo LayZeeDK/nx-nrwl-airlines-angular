@@ -22,5 +22,13 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "booking-desktop-app": {
+      "tags": ["platform:desktop", "scope:booking", "type:app"]
+    },
+    "booking-desktop-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["booking-desktop-app"]
+    }
+  }
 }
