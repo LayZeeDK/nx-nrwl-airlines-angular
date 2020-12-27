@@ -139,6 +139,31 @@
           }
         }
       }
+    },
+    "booking-data-access": {
+      "projectType": "library",
+      "root": "libs/booking/data-access",
+      "sourceRoot": "libs/booking/data-access/src",
+      "prefix": "nrwl-airlines",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/booking/data-access/src/**/*.ts",
+              "libs/booking/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/booking/data-access"],
+          "options": {
+            "jestConfig": "libs/booking/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

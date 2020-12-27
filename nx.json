@@ -32,6 +32,9 @@
     },
     "booking-feature-shell": {
       "tags": ["scope:booking", "type:shell"]
+    },
+    "booking-data-access": {
+      "tags": ["scope:booking", "type:data-access"]
     }
   }
 }
