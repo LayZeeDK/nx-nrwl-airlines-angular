@@ -26,7 +26,7 @@
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "preinstall": "(pnpm remove codelyzer || echo ✅ Codelyzer is already removed.) && (pnpm remove tslint || echo ✅ TSLint is already removed.)"
+    "preinstall": "(pnpm remove codelyzer || echo ✅ Codelyzer is already removed.) && (pnpm remove tslint || echo ✅ TSLint is already removed.) && (pnpm remove @ngrx/entity || echo ✅ NgRx Entity is already removed.)"
   },
   "private": true,
   "dependencies": {
