@@ -18,30 +18,9 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
-  "projects": {
-    "booking-app": {
-      "tags": [
-        "type:app",
-        "scope:booking"
-      ]
-    },
-    "booking-app-e2e": {
-      "tags": [
-        "type:e2e",
-        "scope:booking"
-      ],
-      "implicitDependencies": [
-        "booking-app"
-      ]
-    }
-  }
+  "projects": {}
 }
