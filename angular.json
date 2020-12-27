@@ -155,6 +155,8 @@
       "unitTestRunner": "jest"
     },
     "@nrwl/angular:component": {
+      "displayBlock": true,
+      "skipTests": true,
       "style": "css"
     },
     "@nrwl/angular:library": {
