@@ -1,7 +1,7 @@
 {
   "npmScope": "nrwl-airlines",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "implicitDependencies": {
     "angular.json": "*",
@@ -18,17 +18,30 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
   "projects": {
     "booking-app": {
-      "tags": []
+      "tags": [
+        "type:app",
+        "scope:booking"
+      ]
     },
     "booking-app-e2e": {
-      "tags": [],
-      "implicitDependencies": ["booking-app"]
+      "tags": [
+        "type:e2e",
+        "scope:booking"
+      ],
+      "implicitDependencies": [
+        "booking-app"
+      ]
     }
   }
 }

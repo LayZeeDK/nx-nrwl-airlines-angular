@@ -20,7 +20,9 @@
               "apps/booking-app/src/favicon.ico",
               "apps/booking-app/src/assets"
             ],
-            "styles": ["apps/booking-app/src/styles.css"],
+            "styles": [
+              "apps/booking-app/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -41,13 +43,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -81,7 +83,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/booking-app"],
+          "outputs": [
+            "coverage/apps/booking-app"
+          ],
           "options": {
             "jestConfig": "apps/booking-app/jest.config.js",
             "passWithNoTests": true
@@ -110,7 +114,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/booking-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/booking-app-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -121,26 +127,22 @@
     "packageManager": "pnpm"
   },
   "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
-      },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
     "@nrwl/angular:application": {
       "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
+      "e2eTestRunner": "cypress",
+      "strict": true,
+      "linter": "eslint"
     },
     "@nrwl/angular:component": {
       "style": "css"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest",
+      "strict": true,
+      "linter": "eslint"
+    },
+    "@nrwl/angular:storybook-configuration": {
+      "linter": "eslint"
     }
   },
   "defaultProject": "booking-app"

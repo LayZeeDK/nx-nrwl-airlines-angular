@@ -12,7 +12,7 @@ dependencies:
   tslib: 2.0.3
   zone.js: 0.10.3
 devDependencies:
-  '@angular-devkit/build-angular': 0.1100.5_0854878552b90edc7e30ab06f56b9b51
+  '@angular-devkit/build-angular': 0.1100.5_b6760f87550c5a261d51b191cbb74e5e
   '@angular-eslint/eslint-plugin': 0.8.0-beta.1_eslint@7.10.0+typescript@4.0.5
   '@angular-eslint/eslint-plugin-template': 0.8.0-beta.1_90727bfa7891a1af59d344075193226d
   '@angular-eslint/template-parser': 0.8.0-beta.1_8213f9fbad6829e45b5234db3a650830
@@ -29,7 +29,6 @@ devDependencies:
   '@types/node': 12.12.38
   '@typescript-eslint/eslint-plugin': 4.3.0_0a641c819e3f5e2d27a85327fbf21101
   '@typescript-eslint/parser': 4.3.0_eslint@7.10.0+typescript@4.0.5
-  codelyzer: 6.0.1_tslint@6.1.3
   cypress: 5.6.0
   dotenv: 6.2.0
   eslint: 7.10.0
@@ -40,7 +39,6 @@ devDependencies:
   prettier: 2.1.2
   ts-jest: 26.4.0_jest@26.2.2+typescript@4.0.5
   ts-node: 9.1.1_typescript@4.0.5
-  tslint: 6.1.3_typescript@4.0.5
   typescript: 4.0.5
 lockfileVersion: 5.2
 packages:
@@ -54,7 +52,7 @@ packages:
       yarn: '>= 1.13.0'
     resolution:
       integrity: sha512-yOYfucNouc1doTbcGbCNMXGMSc36+j97XpdNoeGyzFQ7GwezLAro0a9gxc5PdOxndfelkND7J1JuOjxdW5O17A==
-  /@angular-devkit/build-angular/0.1100.5_0854878552b90edc7e30ab06f56b9b51:
+  /@angular-devkit/build-angular/0.1100.5_b6760f87550c5a261d51b191cbb74e5e:
     dependencies:
       '@angular-devkit/architect': 0.1100.5
       '@angular-devkit/build-optimizer': 0.1100.5
@@ -119,7 +117,6 @@ packages:
       terser-webpack-plugin: 4.2.3_webpack@4.44.2
       text-table: 0.2.0
       tree-kill: 1.2.2
-      tslint: 6.1.3_typescript@4.0.5
       typescript: 4.0.5
       webpack: 4.44.2
       webpack-dev-middleware: 3.7.2_webpack@4.44.2
@@ -335,14 +332,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-japxEn07P9z9FnW8ii+M5DIfgRAGNxl6QNQWKBkNo5ytN6iCAB7pVbJI0vn1AUT9TByV3+xDW/FNuoSuzsnX3w==
-  /@angular/compiler/9.0.0_tslib@1.14.1:
-    dependencies:
-      tslib: 1.14.1
-    dev: true
-    peerDependencies:
-      tslib: ^1.10.0
-    resolution:
-      integrity: sha512-ctjwuntPfZZT2mNj2NDIVu51t9cvbhl/16epc5xEwyzyDt76pX9UgwvY+MbXrf/C/FWwdtmNtfP698BKI+9leQ==
   /@angular/core/11.0.5_rxjs@6.5.5+zone.js@0.10.3:
     dependencies:
       rxjs: 6.5.5
@@ -354,18 +343,6 @@ packages:
       zone.js: ~0.10.3
     resolution:
       integrity: sha512-XAXWQi7R3ucZXQwx9QK5jSKJeQyRJ53u2dQDpr7R5stzeCy1a5hrNOkZLg9zOTTPcth/6+FrOrRZP9SMdxtw3w==
-  /@angular/core/9.0.0_6320156b710540144dcff46bc6ec0c0a:
-    dependencies:
-      rxjs: 6.6.3
-      tslib: 1.14.1
-      zone.js: 0.10.3
-    dev: true
-    peerDependencies:
-      rxjs: ^6.5.3
-      tslib: ^1.10.0
-      zone.js: ~0.10.2
-    resolution:
-      integrity: sha512-6Pxgsrf0qF9iFFqmIcWmjJGkkCaCm6V5QNnxMy2KloO3SDq6QuMVRbN9RtC8Urmo25LP+eZ6ZgYqFYpdD8Hd9w==
   /@angular/forms/11.0.5_90eb12a6db44247ee1d762bf7579b2eb:
     dependencies:
       '@angular/common': 11.0.5_@angular+core@11.0.5+rxjs@6.5.5
@@ -3282,12 +3259,6 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-mM8522psRCqzV+6LhomX5wgp25YVibjh8Wj23I5RPkPppSVSjyKD2A2mBJmWGa+KN7f2D6LNh9jkBCeyLktzjg==
-  /app-root-path/3.0.0:
-    dev: true
-    engines:
-      node: '>= 6.0.0'
-    resolution:
-      integrity: sha512-qMcx+Gy2UZynHjOHOIXPNvpf+9cjvk3cWrBBK7zg4gH9+clobJRb9NGzcT7mQTcV/6Gm/1WelUtqxVXnNlrwcw==
   /aproba/1.2.0:
     dev: true
     resolution:
@@ -3306,13 +3277,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
-  /aria-query/3.0.0:
-    dependencies:
-      ast-types-flow: 0.0.7
-      commander: 2.20.3
-    dev: true
-    resolution:
-      integrity: sha1-ZbP8wcoRVajJrmTW7uKX8V1RM8w=
   /arity-n/1.0.4:
     dev: true
     resolution:
@@ -3398,10 +3362,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-WWZ/QfrdTyDMvCu5a41Pf3jsA2c=
-  /ast-types-flow/0.0.7:
-    dev: true
-    resolution:
-      integrity: sha1-9wtzXGvKGlycItmCw+Oef+ujva0=
   /astral-regex/1.0.0:
     dev: true
     engines:
@@ -3473,12 +3433,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
-  /axobject-query/2.0.2:
-    dependencies:
-      ast-types-flow: 0.0.7
-    dev: true
-    resolution:
-      integrity: sha512-MCeek8ZH7hKyO1rWUbKNQBbl4l2eY0ntk7OGi+q0RlafrCnfPxC06WZA+uebCfmYp4mNU9jRBP1AhGyf8+W3ww==
   /babel-code-frame/6.26.0:
     dependencies:
       chalk: 1.1.3
@@ -3840,12 +3794,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xq+q3SRMOxGivLhBNaUdC64hDTQwejJ+H0T/NB1XMtTVEwNTrfFF3gAxiyW0Bu/xWEGhjVKgUcMhCrUy2+uCWg==
-  /builtin-modules/1.1.1:
-    dev: true
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha1-Jw8HbFpywC9bZaR9+Uxf46J4iS8=
   /builtin-status-codes/3.0.0:
     dev: true
     resolution:
@@ -4267,28 +4215,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
-  /codelyzer/6.0.1_tslint@6.1.3:
-    dependencies:
-      '@angular/compiler': 9.0.0_tslib@1.14.1
-      '@angular/core': 9.0.0_6320156b710540144dcff46bc6ec0c0a
-      app-root-path: 3.0.0
-      aria-query: 3.0.0
-      axobject-query: 2.0.2
-      css-selector-tokenizer: 0.7.3
-      cssauron: 1.4.0
-      damerau-levenshtein: 1.0.6
-      rxjs: 6.6.3
-      semver-dsl: 1.0.1
-      source-map: 0.5.7
-      sprintf-js: 1.1.2
-      tslib: 1.14.1
-      tslint: 6.1.3_typescript@4.0.5
-      zone.js: 0.10.3
-    dev: true
-    peerDependencies:
-      tslint: ^5.0.0 || ^6.0.0
-    resolution:
-      integrity: sha512-cOyGQgMdhnRYtW2xrJUNrNYDjEgwQ+BrE2y93Bwz3h4DJ6vJRLfupemU5N3pbYsUlBHJf0u1j1UGk+NLW4d97g==
   /collect-v8-coverage/1.0.1:
     dev: true
     resolution:
@@ -4675,13 +4601,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Dqk7LQKpwLoH3VovzZnkzegqNSuAziQyNZUcrdDM401iY+R5NkGBXGmtO05/yaXQziALuPogeG0b7UAgjnTJTQ==
-  /css-selector-tokenizer/0.7.3:
-    dependencies:
-      cssesc: 3.0.0
-      fastparse: 1.1.2
-    dev: true
-    resolution:
-      integrity: sha512-jWQv3oCEL5kMErj4wRnK/OPoBi0D+P1FR2cDCKYPaMeD2eW3/mttav8HT4hT1CKopiJI/psEULjkClhvJo4Lvg==
   /css-tree/1.0.0-alpha.37:
     dependencies:
       mdn-data: 2.0.4
@@ -4715,12 +4634,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-oUnjmWpy0niI3x/mPL8dVEI1l7MnG3+HHyRPHf+YFSbK+svOhXpmSOcDURUh2aOCgl2grzrOPt1nHLuCVFULLw==
-  /cssauron/1.4.0:
-    dependencies:
-      through: 2.3.8
-    dev: true
-    resolution:
-      integrity: sha1-pmAt/34EqDBtwNuaVR6S6LVmKtg=
   /cssesc/3.0.0:
     dev: true
     engines:
@@ -4884,10 +4797,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-m62ShEObQ39CfralilEQRjH6oAMtNCV1xJyEx5LpRYUVN+EviphDgUc/F3hnYbADmkiNs67Y+3ylmlG7Lnu+FA==
-  /damerau-levenshtein/1.0.6:
-    dev: true
-    resolution:
-      integrity: sha512-JVrozIeElnj3QzfUIt8tB8YMluBJom4Vw9qTPpjGYQ9fYlB3D/rb6OordUxf3xeFB35LKWs0xqcO5U6ySvBtug==
   /dashdash/1.14.1:
     dependencies:
       assert-plus: 1.0.0
@@ -5871,10 +5780,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
-  /fastparse/1.1.2:
-    dev: true
-    resolution:
-      integrity: sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ==
   /fastq/1.10.0:
     dependencies:
       reusify: 1.0.4
@@ -10593,12 +10498,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2P4PtieJeEwVgTU9QEcwIRDQ/mXJLX8/+I3ur+Pg16nS8oNbrGxEso9NyYWy8NAmXiNl4dlAp5MwoNeCWzON4w==
-  /semver-dsl/1.0.1:
-    dependencies:
-      semver: 5.7.1
-    dev: true
-    resolution:
-      integrity: sha1-02eN5VVeimH2Ke7QJTZq5fJzQKA=
   /semver-intersect/1.4.0:
     dependencies:
       semver: 5.7.1
@@ -11003,10 +10902,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
-  /sprintf-js/1.1.2:
-    dev: true
-    resolution:
-      integrity: sha512-VE0SOVEHCk7Qc8ulkWw3ntAzXuqf7S2lvwQaDLRnUeIEaKNQJzV6BwmLKhOqT61aGhfUMrXeaBk+oDGCzvhcug==
   /sshpk/1.16.1:
     dependencies:
       asn1: 0.2.4
@@ -11714,40 +11609,6 @@ packages:
   /tslib/2.0.3:
     resolution:
       integrity: sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
-  /tslint/6.1.3_typescript@4.0.5:
-    dependencies:
-      '@babel/code-frame': 7.12.11
-      builtin-modules: 1.1.1
-      chalk: 2.4.2
-      commander: 2.20.3
-      diff: 4.0.2
-      glob: 7.1.6
-      js-yaml: 3.14.1
-      minimatch: 3.0.4
-      mkdirp: 0.5.5
-      resolve: 1.19.0
-      semver: 5.7.1
-      tslib: 1.14.1
-      tsutils: 2.29.0_typescript@4.0.5
-      typescript: 4.0.5
-    deprecated: 'TSLint has been deprecated in favor of ESLint. Please see https://github.com/palantir/tslint/issues/4534 for more information.'
-    dev: true
-    engines:
-      node: '>=4.8.0'
-    hasBin: true
-    peerDependencies:
-      typescript: '>=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >=3.0.0-dev || >= 3.1.0-dev || >= 3.2.0-dev || >= 4.0.0-dev'
-    resolution:
-      integrity: sha512-IbR4nkT96EQOvKE2PW/djGz8iGNeJ4rF2mBfiYaR/nvUWYKJhLwimoJKgjIFEIDibBtOevj7BqCRL4oHeWWUCg==
-  /tsutils/2.29.0_typescript@4.0.5:
-    dependencies:
-      tslib: 1.14.1
-      typescript: 4.0.5
-    dev: true
-    peerDependencies:
-      typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev'
-    resolution:
-      integrity: sha512-g5JVHCIJwzfISaXpXE1qvNalca5Jwob6FjI4AoPlqMusJ6ftFE7IkkFoMhVLRgK+4Kx3gkzb8UZK5t5yTTvEmA==
   /tsutils/3.17.1_typescript@4.0.5:
     dependencies:
       tslib: 1.14.1
@@ -12590,6 +12451,7 @@ packages:
     resolution:
       integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
   /zone.js/0.10.3:
+    dev: false
     resolution:
       integrity: sha512-LXVLVEq0NNOqK/fLJo3d0kfzd4sxwn2/h67/02pjCjfKDxgx1i9QqpvtHD8CrBnSSwMw5+dy11O7FRX5mkO7Cg==
 specifiers:
@@ -12619,7 +12481,6 @@ specifiers:
   '@types/node': 12.12.38
   '@typescript-eslint/eslint-plugin': 4.3.0
   '@typescript-eslint/parser': 4.3.0
-  codelyzer: ^6.0.0
   cypress: ^5.5.0
   dotenv: 6.2.0
   eslint: 7.10.0
@@ -12632,6 +12493,5 @@ specifiers:
   ts-jest: 26.4.0
   ts-node: ~9.1.1
   tslib: ^2.0.0
-  tslint: ~6.1.0
   typescript: ~4.0.3
   zone.js: ^0.10.2
