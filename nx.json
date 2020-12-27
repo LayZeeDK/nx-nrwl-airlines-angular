@@ -38,6 +38,9 @@
     },
     "shared-root-data-access": {
       "tags": ["domain:shared", "scope:root", "type:data-access"]
+    },
+    "shared-root-environments": {
+      "tags": ["domain:shared", "scope:root", "type:environments"]
     }
   }
 }
