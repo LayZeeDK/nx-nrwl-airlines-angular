@@ -41,6 +41,9 @@
     },
     "shared-root-environments": {
       "tags": ["domain:shared", "scope:root", "type:environments"]
+    },
+    "booking-feature-passenger-info": {
+      "tags": ["domain:booking", "scope:booking", "type:feature"]
     }
   }
 }

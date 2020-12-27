@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/booking/data-access',
     '<rootDir>/libs/shared/root/data-access',
     '<rootDir>/libs/shared/root/environments',
+    '<rootDir>/libs/booking/feature-passenger-info',
   ],
 };

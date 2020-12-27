@@ -10,7 +10,15 @@ const bookingFeatureShellRoutes: Route[] = [
   {
     path: '',
     component: ShellComponent,
-    children: [],
+    children: [
+      {
+        path: 'booking-feature-passenger-info',
+        loadChildren: () =>
+          import('@nrwl-airlines/booking/feature-passenger-info').then(
+            (module) => module.BookingFeaturePassengerInfoModule
+          ),
+      },
+    ],
   },
 ];
 
