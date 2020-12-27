@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Route } from '@angular/router';
+import { Route, RouterModule } from '@angular/router';
+
+import { ShellComponent } from './shell/shell.component';
 import { ShellModule } from './shell/shell.module';
 
-export const bookingFeatureShellRoutes: Route[] = [];
+const bookingFeatureShellRoutes: Route[] = [
+  {
+    path: '',
+    component: ShellComponent,
+    children: [],
+  },
+];
 
 @NgModule({
-  imports: [CommonModule, RouterModule, ShellModule],
+  imports: [RouterModule.forRoot(bookingFeatureShellRoutes), ShellModule],
 })
 export class BookingFeatureShellModule {}
