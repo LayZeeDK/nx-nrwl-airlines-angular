@@ -16,9 +16,9 @@ dependencies:
   zone.js: 0.10.3
 devDependencies:
   '@angular-devkit/build-angular': 0.1100.5_b6760f87550c5a261d51b191cbb74e5e
-  '@angular-eslint/eslint-plugin': 0.8.0-beta.1_eslint@7.10.0+typescript@4.0.5
-  '@angular-eslint/eslint-plugin-template': 0.8.0-beta.1_90727bfa7891a1af59d344075193226d
-  '@angular-eslint/template-parser': 0.8.0-beta.1_8213f9fbad6829e45b5234db3a650830
+  '@angular-eslint/eslint-plugin': 0.8.0-beta.7_eslint@7.10.0+typescript@4.0.5
+  '@angular-eslint/eslint-plugin-template': 0.8.0-beta.7_46841c282a9bd7bb66d019255eb6cc27
+  '@angular-eslint/template-parser': 0.8.0-beta.7_8213f9fbad6829e45b5234db3a650830
   '@angular/cli': 11.0.5
   '@angular/compiler-cli': 11.0.5_ae04eea250591f41b901d33a8893b81f
   '@angular/language-service': 11.0.5
@@ -212,10 +212,12 @@ packages:
       yarn: '>= 1.13.0'
     resolution:
       integrity: sha512-0NKGC8Nf/4vvDpWKB7bwxIazvNnNHnZBX6XlyBXNl+fW8tpTef3PNMJMSErTz9LFnuv61vsKbc36u/Ek2YChWg==
-  /@angular-eslint/eslint-plugin-template/0.8.0-beta.1_90727bfa7891a1af59d344075193226d:
+  /@angular-eslint/eslint-plugin-template/0.8.0-beta.7_46841c282a9bd7bb66d019255eb6cc27:
     dependencies:
-      '@angular-eslint/template-parser': 0.8.0-beta.1_8213f9fbad6829e45b5234db3a650830
+      '@angular-eslint/template-parser': 0.8.0-beta.7_8213f9fbad6829e45b5234db3a650830
       '@typescript-eslint/experimental-utils': 4.3.0_eslint@7.10.0+typescript@4.0.5
+      aria-query: 4.2.2
+      axobject-query: 2.2.0
       eslint: 7.10.0
       typescript: 4.0.5
     dev: true
@@ -224,8 +226,8 @@ packages:
       eslint: '*'
       typescript: '*'
     resolution:
-      integrity: sha512-nyy93m+2WBe5Fpc2IKzWPH1bGqNZYd+BU6nYhNssiYXPRcDWBqIsIhEM74dRK/0AN37tUguJ2weZ6xF6fVN8hw==
-  /@angular-eslint/eslint-plugin/0.8.0-beta.1_eslint@7.10.0+typescript@4.0.5:
+      integrity: sha512-NaypVRYR+AjC/LXuBEZSHv6EpyjIVu2+YpMI2CPWuPDjmBi/x+g+jZXkqD/QtT6voKGtlII77QfuZMbGgfNhiQ==
+  /@angular-eslint/eslint-plugin/0.8.0-beta.7_eslint@7.10.0+typescript@4.0.5:
     dependencies:
       '@typescript-eslint/experimental-utils': 4.3.0_eslint@7.10.0+typescript@4.0.5
       eslint: 7.10.0
@@ -238,8 +240,8 @@ packages:
       eslint-plugin-prefer-arrow: '*'
       typescript: '*'
     resolution:
-      integrity: sha512-+vCkUpM81qjb0UwxlUUwGML0lLzmnhqf5HHsRzzfwhd0s5g3DPw8w4Z/CDNBagJmTzSUSnH1GF9uEdtyJCEprA==
-  /@angular-eslint/template-parser/0.8.0-beta.1_8213f9fbad6829e45b5234db3a650830:
+      integrity: sha512-MsOzL+7O6bzNA18MZoPKc2SZCD5oavQQEnBeHNGERvZuqrj2Omf/9xjFzoRmAlvGqYUmsF8x6qTdSjLmE5IDVQ==
+  /@angular-eslint/template-parser/0.8.0-beta.7_8213f9fbad6829e45b5234db3a650830:
     dependencies:
       '@angular/compiler': 11.0.5
       eslint: 7.10.0
@@ -251,7 +253,7 @@ packages:
       eslint: '*'
       typescript: '*'
     resolution:
-      integrity: sha512-fiLfwlWWwYz657SxcNfPKsl4HiItqj7mNZuMPlxsiKSyT/+pwTNzMttCafy2v0144SNmHEslZS1nQfc1Nq715g==
+      integrity: sha512-e2nzNQlnbcB8G8/lUSA1ZH+UUvyD+WVXO8hgAOvBWjslXvpkrKhwMSvF7N2A9VBDPFD4K4jEX2/KSiFQAB6/fA==
   /@angular/animations/11.0.5_@angular+core@11.0.5:
     dependencies:
       '@angular/core': 11.0.5_rxjs@6.5.5+zone.js@0.10.3
@@ -1991,6 +1993,13 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-J36NhwnfdzpmH41M1DrnkkgAqhZaqr/NBdPfQ677mLzlaXo+oDiv1deyCDtgAhz8p328otdob0Du7+xgHGZbKg==
+  /@babel/runtime-corejs3/7.12.5:
+    dependencies:
+      core-js-pure: 3.8.1
+      regenerator-runtime: 0.13.7
+    dev: true
+    resolution:
+      integrity: sha512-roGr54CsTmNPPzZoCP1AmDXuBoNao7tnSA83TXTwt+UK5QVyh1DIJnrgYRPWKCF2flqZQXwa7Yr8v7VmLzF0YQ==
   /@babel/runtime/7.12.1:
     dependencies:
       regenerator-runtime: 0.13.7
@@ -3338,6 +3347,15 @@ packages:
     dev: true
     resolution:
       integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
+  /aria-query/4.2.2:
+    dependencies:
+      '@babel/runtime': 7.12.5
+      '@babel/runtime-corejs3': 7.12.5
+    dev: true
+    engines:
+      node: '>=6.0'
+    resolution:
+      integrity: sha512-o/HelwhuKpTj/frsOsbNLNgnNGVIFsVP/SW2BSF14gVl7kAfMOJ6/8wUAUvG1R1NHKrfG+2sHZTu0yauT1qBrA==
   /arity-n/1.0.4:
     dev: true
     resolution:
@@ -3494,6 +3512,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+  /axobject-query/2.2.0:
+    dev: true
+    resolution:
+      integrity: sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==
   /babel-code-frame/6.26.0:
     dependencies:
       chalk: 1.1.3
@@ -4496,6 +4518,11 @@ packages:
       semver: 7.0.0
     resolution:
       integrity: sha512-a16TLmy9NVD1rkjUGbwuyWkiDoN0FDpAwrfLONvHFQx0D9k7J9y0srwMT8QP/Z6HE3MIFaVynEeYwZwPX1o5RQ==
+  /core-js-pure/3.8.1:
+    dev: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-Se+LaxqXlVXGvmexKGPvnUIYC1jwXu1H6Pkyb3uBM5d8/NELMYCHs/4/roD7721NxrTLyv7e5nXd5/QLBO+10g==
   /core-js/3.6.5:
     dev: true
     requiresBuild: true
@@ -12517,9 +12544,9 @@ packages:
       integrity: sha512-LXVLVEq0NNOqK/fLJo3d0kfzd4sxwn2/h67/02pjCjfKDxgx1i9QqpvtHD8CrBnSSwMw5+dy11O7FRX5mkO7Cg==
 specifiers:
   '@angular-devkit/build-angular': ~0.1100.1
-  '@angular-eslint/eslint-plugin': 0.8.0-beta.1
-  '@angular-eslint/eslint-plugin-template': 0.8.0-beta.1
-  '@angular-eslint/template-parser': 0.8.0-beta.1
+  '@angular-eslint/eslint-plugin': ^0.8.0 || >=0.8.0-beta.7
+  '@angular-eslint/eslint-plugin-template': ^0.8.0 || >=0.8.0-beta.7
+  '@angular-eslint/template-parser': ^0.8.0 || >=0.8.0-beta.7
   '@angular/animations': ^11.0.0
   '@angular/cli': ~11.0.0
   '@angular/common': ^11.0.0
@@ -12531,11 +12558,11 @@ specifiers:
   '@angular/platform-browser': ^11.0.0
   '@angular/platform-browser-dynamic': ^11.0.0
   '@angular/router': ^11.0.0
-  '@ngrx/effects': 10.0.0
-  '@ngrx/router-store': 10.0.0
-  '@ngrx/schematics': 10.0.0
-  '@ngrx/store': 10.0.0
-  '@ngrx/store-devtools': 10.0.0
+  '@ngrx/effects': ^10.0.0
+  '@ngrx/router-store': ^10.0.0
+  '@ngrx/schematics': ^10.0.0
+  '@ngrx/store': ^10.0.0
+  '@ngrx/store-devtools': ^10.0.0
   '@nrwl/angular': 11.0.18
   '@nrwl/cli': 11.0.18
   '@nrwl/cypress': 11.0.18
