@@ -122,21 +122,21 @@
   },
   "schematics": {
     "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
       "e2eTestRunner": "cypress",
+      "linter": "eslint",
       "routing": false,
       "strict": true,
       "style": "css",
-      "linter": "eslint"
+      "unitTestRunner": "jest"
     },
     "@nrwl/angular:component": {
       "style": "css"
     },
     "@nrwl/angular:library": {
-      "unitTestRunner": "jest",
+      "linter": "eslint",
       "strict": true,
       "style": "css",
-      "linter": "eslint"
+      "unitTestRunner": "jest"
     },
     "@nrwl/angular:storybook-configuration": {
       "linter": "eslint"
