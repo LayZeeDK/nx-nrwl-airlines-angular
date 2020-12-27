@@ -20,9 +20,7 @@
               "apps/booking-app/src/favicon.ico",
               "apps/booking-app/src/assets"
             ],
-            "styles": [
-              "apps/booking-app/src/styles.css"
-            ],
+            "styles": ["apps/booking-app/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -83,9 +81,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/booking-app"
-          ],
+          "outputs": ["coverage/apps/booking-app"],
           "options": {
             "jestConfig": "apps/booking-app/jest.config.js",
             "passWithNoTests": true
@@ -114,9 +110,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/booking-app-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/booking-app-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -130,7 +124,9 @@
     "@nrwl/angular:application": {
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress",
+      "routing": false,
       "strict": true,
+      "style": "css",
       "linter": "eslint"
     },
     "@nrwl/angular:component": {
@@ -139,6 +135,7 @@
     "@nrwl/angular:library": {
       "unitTestRunner": "jest",
       "strict": true,
+      "style": "css",
       "linter": "eslint"
     },
     "@nrwl/angular:storybook-configuration": {
