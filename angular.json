@@ -114,6 +114,31 @@
           }
         }
       }
+    },
+    "booking-feature-shell": {
+      "projectType": "library",
+      "root": "libs/booking/feature-shell",
+      "sourceRoot": "libs/booking/feature-shell/src",
+      "prefix": "booking",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/booking/feature-shell/src/**/*.ts",
+              "libs/booking/feature-shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/booking/feature-shell"],
+          "options": {
+            "jestConfig": "libs/booking/feature-shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

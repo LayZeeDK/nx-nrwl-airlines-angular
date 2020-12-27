@@ -29,6 +29,9 @@
     "booking-desktop-app-e2e": {
       "tags": [],
       "implicitDependencies": ["booking-desktop-app"]
+    },
+    "booking-feature-shell": {
+      "tags": ["scope:booking", "type:shell"]
     }
   }
 }
