@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/apps/booking/desktop-app',
     '<rootDir>/libs/booking/feature-shell',
     '<rootDir>/libs/booking/data-access',
+    '<rootDir>/libs/shared/root/data-access',
   ],
 };

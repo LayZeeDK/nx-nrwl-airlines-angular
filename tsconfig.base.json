@@ -20,6 +20,9 @@
       ],
       "@nrwl-airlines/booking/data-access": [
         "libs/booking/data-access/src/index.ts"
+      ],
+      "@nrwl-airlines/shared/root/data-access": [
+        "libs/shared/root/data-access/src/index.ts"
       ]
     }
   },

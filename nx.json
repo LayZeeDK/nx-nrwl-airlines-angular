@@ -24,17 +24,20 @@
   },
   "projects": {
     "booking-desktop-app": {
-      "tags": ["platform:desktop", "scope:booking", "type:app"]
+      "tags": ["domain:booking", "platform:desktop", "type:app"]
     },
     "booking-desktop-app-e2e": {
-      "tags": [],
+      "tags": ["domain:booking", "platform:desktop", "type:e2e"],
       "implicitDependencies": ["booking-desktop-app"]
     },
     "booking-feature-shell": {
-      "tags": ["scope:booking", "type:shell"]
+      "tags": ["domain:booking", "scope:booking", "type:shell"]
     },
     "booking-data-access": {
-      "tags": ["scope:booking", "type:data-access"]
+      "tags": ["domain:booking", "scope:booking", "type:data-access"]
+    },
+    "shared-root-data-access": {
+      "tags": ["domain:shared", "scope:root", "type:data-access"]
     }
   }
 }
