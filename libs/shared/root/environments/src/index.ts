@@ -1,1 +1,1 @@
-export * from './lib/shared-root-environments.module';
+export * from './lib/environment';
