@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StoreModule } from '@ngrx/store';
+import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -11,7 +12,7 @@ import { environment } from '../environments/environment';
     StoreModule.forRoot(
       {},
       {
-        metaReducers: !environment.production ? [] : [],
+        metaReducers: environment.production ? [] : [],
         runtimeChecks: {
           strictActionImmutability: true,
           strictStateImmutability: true,
@@ -19,7 +20,7 @@ import { environment } from '../environments/environment';
       }
     ),
     EffectsModule.forRoot([]),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    environment.production ? [] : StoreDevtoolsModule.instrument(),
   ],
 })
 export class SharedRootDataAccessModule {}
