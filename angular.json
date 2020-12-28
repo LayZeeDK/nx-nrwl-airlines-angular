@@ -743,6 +743,31 @@
           }
         }
       }
+    },
+    "shared-util-formatting": {
+      "projectType": "library",
+      "root": "libs/shared/util-formatting",
+      "sourceRoot": "libs/shared/util-formatting/src",
+      "prefix": "nrwl-airlines",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/util-formatting/src/**/*.ts",
+              "libs/shared/util-formatting/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/util-formatting"],
+          "options": {
+            "jestConfig": "libs/shared/util-formatting/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

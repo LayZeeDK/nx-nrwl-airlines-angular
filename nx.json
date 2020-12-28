@@ -83,6 +83,9 @@
     },
     "shared-ui-buttons": {
       "tags": ["domain:shared", "scope:shared", "type:ui"]
+    },
+    "shared-util-formatting": {
+      "tags": ["domain:shared", "scope:shared", "type:util"]
     }
   }
 }

@@ -12,6 +12,7 @@ dependencies:
   '@ngrx/router-store': 10.0.0_89fdeeb5ccb7740d00b7a4fcc14a3748
   '@ngrx/store': 10.0.0_@angular+core@11.0.5+rxjs@6.5.5
   '@nrwl/angular': 11.0.18_147c2e5d5667fc2bef073c9827223eed
+  luxon: 1.25.0
   rxjs: 6.5.5
   tslib: 2.0.3
   zone.js: 0.10.3
@@ -32,6 +33,7 @@ devDependencies:
   '@nrwl/tao': 11.0.18
   '@nrwl/workspace': 11.0.18_prettier@2.1.2
   '@types/jest': 26.0.8
+  '@types/luxon': 1.25.0
   '@types/node': 12.12.38
   '@typescript-eslint/eslint-plugin': 4.3.0_0a641c819e3f5e2d27a85327fbf21101
   '@typescript-eslint/parser': 4.3.0_eslint@7.10.0+typescript@4.0.5
@@ -2766,6 +2768,10 @@ packages:
   /@types/json5/0.0.29:
     resolution:
       integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
+  /@types/luxon/1.25.0:
+    dev: true
+    resolution:
+      integrity: sha512-iIJp2CP6C32gVqI08HIYnzqj55tlLnodIBMCcMf28q9ckqMfMzocCmIzd9JWI/ALLPMUiTkCu1JGv3FFtu6t3g==
   /@types/minimatch/3.0.3:
     dev: true
     resolution:
@@ -8191,6 +8197,10 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
+  /luxon/1.25.0:
+    dev: false
+    resolution:
+      integrity: sha512-hEgLurSH8kQRjY6i4YLey+mcKVAWXbDNlZRmM6AgWDJ1cY3atl8Ztf5wEY7VBReFbmGnwQPz7KYJblL8B2k0jQ==
   /magic-string/0.25.7:
     dependencies:
       sourcemap-codec: 1.4.8
@@ -12586,6 +12596,7 @@ specifiers:
   '@nrwl/tao': 11.0.18
   '@nrwl/workspace': 11.0.18
   '@types/jest': 26.0.8
+  '@types/luxon': ^1.25.0
   '@types/node': 12.12.38
   '@typescript-eslint/eslint-plugin': 4.3.0
   '@typescript-eslint/parser': 4.3.0
@@ -12596,6 +12607,7 @@ specifiers:
   eslint-plugin-cypress: ^2.10.3
   jest: 26.2.2
   jest-preset-angular: 8.3.1
+  luxon: ^1.25.0
   prettier: 2.1.2
   rxjs: ~6.5.5
   ts-jest: 26.4.0
