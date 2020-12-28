@@ -6,8 +6,8 @@ import { environment } from '@nrwl-airlines/shared/root/environments';
   selector: 'booking-flight-search',
   styleUrls: ['./flight-search.component.css'],
   templateUrl:
-    environment.platform === 'desktop'
-      ? './flight-search.component.html'
-      : './flight-search.mobile.component.html',
+    environment.platform === 'mobile'
+      ? './flight-search.mobile.component.html'
+      : './flight-search.component.html',
 })
 export class FlightSearchComponent {}
