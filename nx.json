@@ -80,6 +80,9 @@
     },
     "shared-seatmap-feature-seat-listing": {
       "tags": ["domain:shared", "scope:seatmap", "type:feature"]
+    },
+    "shared-ui-buttons": {
+      "tags": ["domain:shared", "scope:shared", "type:ui"]
     }
   }
 }

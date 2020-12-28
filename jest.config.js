@@ -15,5 +15,6 @@ module.exports = {
     '<rootDir>/apps/check-in/mobile-app',
     '<rootDir>/libs/shared/seatmap/data-access',
     '<rootDir>/libs/shared/seatmap/feature-seat-listing',
+    '<rootDir>/libs/shared/ui-buttons',
   ],
 };
