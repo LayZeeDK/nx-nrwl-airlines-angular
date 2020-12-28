@@ -4,7 +4,7 @@ import { DateTime } from 'luxon';
 
 @Component({
   selector: 'seatmap-seat-listing',
-  styleUrls: ['./seat-listing.component.css'],
+  styleUrls: ['./seat-listing.component.scss'],
   templateUrl: './seat-listing.component.html',
 })
 export class SeatListingComponent {

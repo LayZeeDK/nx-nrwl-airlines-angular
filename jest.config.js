@@ -17,5 +17,6 @@ module.exports = {
     '<rootDir>/libs/shared/seatmap/feature-seat-listing',
     '<rootDir>/libs/shared/ui-buttons',
     '<rootDir>/libs/shared/util-formatting',
+    '<rootDir>/libs/shared/root/styles',
   ],
 };

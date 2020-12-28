@@ -28,7 +28,7 @@
                 "output": "assets"
               }
             ],
-            "styles": ["apps/booking/desktop-app/src/styles.css"],
+            "styles": ["libs/shared/root/styles/src/index.scss"],
             "scripts": []
           },
           "configurations": {
@@ -275,7 +275,7 @@
                 "output": "assets"
               }
             ],
-            "styles": ["apps/booking/mobile-app/src/styles.css"],
+            "styles": ["libs/shared/root/styles/src/index.scss"],
             "scripts": [],
             "fileReplacements": [
               {
@@ -428,7 +428,7 @@
                 "output": "assets"
               }
             ],
-            "styles": ["apps/check-in/desktop-app/src/styles.css"],
+            "styles": ["libs/shared/root/styles/src/index.scss"],
             "scripts": []
           },
           "configurations": {
@@ -550,7 +550,7 @@
                 "output": "assets"
               }
             ],
-            "styles": ["apps/check-in/mobile-app/src/styles.css"],
+            "styles": ["libs/shared/root/styles/src/index.scss"],
             "scripts": [],
             "fileReplacements": [
               {
@@ -806,6 +806,12 @@
       "root": "libs/shared/root/assets",
       "sourceRoot": "libs/shared/root/assets/src",
       "architect": {}
+    },
+    "shared-root-styles": {
+      "projectType": "library",
+      "root": "libs/shared/root/styles",
+      "sourceRoot": "libs/shared/root/styles/src",
+      "architect": {}
     }
   },
   "cli": {
@@ -818,18 +824,18 @@
       "linter": "eslint",
       "routing": false,
       "strict": true,
-      "style": "css",
+      "style": "scss",
       "unitTestRunner": "jest"
     },
     "@nrwl/angular:component": {
       "displayBlock": true,
       "skipTests": true,
-      "style": "css"
+      "style": "scss"
     },
     "@nrwl/angular:library": {
       "linter": "eslint",
       "strict": true,
-      "style": "css",
+      "style": "scss",
       "unitTestRunner": "jest"
     },
     "@nrwl/angular:storybook-configuration": {

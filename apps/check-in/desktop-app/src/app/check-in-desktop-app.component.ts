@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'check-in-desktop-app',
-  styleUrls: ['./check-in-desktop-app.component.css'],
+  styleUrls: ['./check-in-desktop-app.component.scss'],
   templateUrl: './check-in-desktop-app.component.html',
 })
 export class CheckInDesktopAppComponent {

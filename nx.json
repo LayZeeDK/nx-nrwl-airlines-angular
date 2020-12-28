@@ -89,6 +89,9 @@
     },
     "shared-root-assets": {
       "tags": ["domain:shared", "scope:root", "type:assets"]
+    },
+    "shared-root-styles": {
+      "tags": ["domain:shared", "scope:root", "type:styles"]
     }
   }
 }

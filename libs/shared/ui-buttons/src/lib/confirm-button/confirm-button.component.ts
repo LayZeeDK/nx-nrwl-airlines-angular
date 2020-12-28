@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'nrwl-airlines-confirm-button',
-  styleUrls: ['./confirm-button.component.css'],
+  styleUrls: ['./confirm-button.component.scss'],
   templateUrl: './confirm-button.component.html',
 })
 export class ConfirmButtonComponent {
