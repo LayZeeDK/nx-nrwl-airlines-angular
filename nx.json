@@ -24,7 +24,8 @@
   },
   "projects": {
     "booking-desktop-app": {
-      "tags": ["domain:booking", "platform:desktop", "type:app"]
+      "tags": ["domain:booking", "platform:desktop", "type:app"],
+      "implicitDependencies": ["shared-root-assets", "shared-root-styles"]
     },
     "booking-desktop-app-e2e": {
       "tags": ["domain:booking", "platform:desktop", "type:e2e"],
@@ -46,7 +47,8 @@
       "tags": ["domain:booking", "scope:booking", "type:feature"]
     },
     "booking-mobile-app": {
-      "tags": ["domain:booking", "platform:mobile", "type:app"]
+      "tags": ["domain:booking", "platform:mobile", "type:app"],
+      "implicitDependencies": ["shared-root-assets", "shared-root-styles"]
     },
     "booking-mobile-app-e2e": {
       "tags": [],
@@ -56,14 +58,16 @@
       "tags": ["domain:check-in", "scope:check-in", "type:data-access"]
     },
     "check-in-desktop-app": {
-      "tags": ["domain:check-in", "platform:desktop", "type:app"]
+      "tags": ["domain:check-in", "platform:desktop", "type:app"],
+      "implicitDependencies": ["shared-root-assets", "shared-root-styles"]
     },
     "check-in-desktop-app-e2e": {
       "tags": [],
       "implicitDependencies": ["check-in-desktop-app"]
     },
     "check-in-mobile-app": {
-      "tags": ["domain:check-in", "platform:mobile", "type:app"]
+      "tags": ["domain:check-in", "platform:mobile", "type:app"],
+      "implicitDependencies": ["shared-root-assets", "shared-root-styles"]
     },
     "check-in-mobile-app-e2e": {
       "tags": [],
