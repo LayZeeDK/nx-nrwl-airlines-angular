@@ -67,6 +67,13 @@
     "check-in-desktop-app-e2e": {
       "tags": [],
       "implicitDependencies": ["check-in-desktop-app"]
+    },
+    "check-in-mobile-app": {
+      "tags": ["domain:check-in", "platform:mobile", "type:app"]
+    },
+    "check-in-mobile-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["check-in-mobile-app"]
     }
   }
 }

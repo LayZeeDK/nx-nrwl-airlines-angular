@@ -12,5 +12,6 @@ module.exports = {
     '<rootDir>/libs/check-in/data-access',
     '<rootDir>/libs/check-in/feature-shell',
     '<rootDir>/apps/check-in/desktop-app',
+    '<rootDir>/apps/check-in/mobile-app',
   ],
 };
