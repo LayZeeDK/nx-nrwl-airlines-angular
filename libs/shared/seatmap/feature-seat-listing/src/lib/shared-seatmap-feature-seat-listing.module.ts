@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
+import { SeatListingComponent } from './seat-listing/seat-listing.component';
+import { SeatListingModule } from './seat-listing/seat-listing.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-
     RouterModule.forChild([
-      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
+      { path: '', pathMatch: 'full', component: SeatListingComponent },
     ]),
+    SeatListingModule,
   ],
 })
 export class SharedSeatmapFeatureSeatListingModule {}
