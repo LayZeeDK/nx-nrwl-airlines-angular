@@ -8,6 +8,6 @@ describe('check-in-desktop-app', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to check-in-desktop-app!');
+    getGreeting().contains('check-in-desktop-app');
   });
 });
