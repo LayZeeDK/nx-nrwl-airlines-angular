@@ -239,6 +239,31 @@
           }
         }
       }
+    },
+    "booking-feature-flight-search": {
+      "projectType": "library",
+      "root": "libs/booking/feature-flight-search",
+      "sourceRoot": "libs/booking/feature-flight-search/src",
+      "prefix": "booking",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/booking/feature-flight-search/src/**/*.ts",
+              "libs/booking/feature-flight-search/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/booking/feature-flight-search"],
+          "options": {
+            "jestConfig": "libs/booking/feature-flight-search/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

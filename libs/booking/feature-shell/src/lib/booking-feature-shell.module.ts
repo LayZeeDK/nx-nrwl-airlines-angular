@@ -12,6 +12,18 @@ const bookingFeatureShellRoutes: Route[] = [
     component: ShellComponent,
     children: [
       {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'flight-search',
+      },
+      {
+        path: 'booking-feature-flight-search',
+        loadChildren: () =>
+          import('@nrwl-airlines/booking/feature-flight-search').then(
+            (module) => module.BookingFeatureFlightSearchModule
+          ),
+      },
+      {
         path: 'booking-feature-passenger-info',
         loadChildren: () =>
           import('@nrwl-airlines/booking/feature-passenger-info').then(

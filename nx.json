@@ -44,6 +44,9 @@
     },
     "booking-feature-passenger-info": {
       "tags": ["domain:booking", "scope:booking", "type:feature"]
+    },
+    "booking-feature-flight-search": {
+      "tags": ["domain:booking", "scope:booking", "type:feature"]
     }
   }
 }

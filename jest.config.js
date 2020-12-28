@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/libs/shared/root/data-access',
     '<rootDir>/libs/shared/root/environments',
     '<rootDir>/libs/booking/feature-passenger-info',
+    '<rootDir>/libs/booking/feature-flight-search',
   ],
 };
