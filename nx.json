@@ -54,6 +54,9 @@
     "booking-mobile-app-e2e": {
       "tags": [],
       "implicitDependencies": ["booking-mobile-app"]
+    },
+    "check-in-data-access": {
+      "tags": ["domain:check-in", "scope:check-in", "type:data-access"]
     }
   }
 }

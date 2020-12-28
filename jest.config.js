@@ -9,5 +9,6 @@ module.exports = {
     '<rootDir>/libs/booking/feature-passenger-info',
     '<rootDir>/libs/booking/feature-flight-search',
     '<rootDir>/apps/booking/mobile-app',
+    '<rootDir>/libs/check-in/data-access',
   ],
 };
