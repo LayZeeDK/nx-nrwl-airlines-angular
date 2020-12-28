@@ -41,13 +41,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -285,14 +285,20 @@
               "apps/booking/mobile-app/src/assets"
             ],
             "styles": ["apps/booking/mobile-app/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "fileReplacements": [
+              {
+                "replace": "libs/shared/root/environments/src/lib/environment.ts",
+                "with": "libs/shared/root/environments/src/lib/environment.mobile.ts"
+              }
+            ]
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/booking/mobile-app/src/environments/environment.ts",
-                  "with": "apps/booking/mobile-app/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/root/environments/src/lib/environment.ts",
+                  "with": "libs/shared/root/environments/src/lib/environment.mobile.prod.ts"
                 }
               ],
               "optimization": true,
@@ -305,13 +311,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
