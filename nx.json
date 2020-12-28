@@ -30,9 +30,6 @@
       "tags": ["domain:booking", "platform:desktop", "type:e2e"],
       "implicitDependencies": ["booking-desktop-app"]
     },
-    "booking-feature-shell": {
-      "tags": ["domain:booking", "scope:booking", "type:shell"]
-    },
     "booking-data-access": {
       "tags": ["domain:booking", "scope:booking", "type:data-access"]
     },
@@ -57,9 +54,6 @@
     },
     "check-in-data-access": {
       "tags": ["domain:check-in", "scope:check-in", "type:data-access"]
-    },
-    "check-in-feature-shell": {
-      "tags": ["domain:check-in", "scope:check-in", "type:shell"]
     },
     "check-in-desktop-app": {
       "tags": ["domain:check-in", "platform:desktop", "type:app"]
@@ -86,6 +80,12 @@
     },
     "seatmap-data-access": {
       "tags": ["domain:seatmap", "scope:seatmap", "type:data-access"]
+    },
+    "booking-root-feature-shell": {
+      "tags": ["domain:booking", "scope:root", "type:shell"]
+    },
+    "check-in-root-feature-shell": {
+      "tags": ["domain:check-in", "scope:root", "type:shell"]
     }
   }
 }

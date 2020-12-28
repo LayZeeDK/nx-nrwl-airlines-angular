@@ -121,33 +121,6 @@
         }
       }
     },
-    "booking-feature-shell": {
-      "projectType": "library",
-      "root": "libs/booking/feature-shell",
-      "sourceRoot": "libs/booking/feature-shell/src",
-      "prefix": "booking",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/booking/feature-shell/src/**/*.ts",
-              "libs/booking/feature-shell/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/booking/feature-shell"
-          ],
-          "options": {
-            "jestConfig": "libs/booking/feature-shell/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "booking-data-access": {
       "projectType": "library",
       "root": "libs/booking/data-access",
@@ -431,33 +404,6 @@
           ],
           "options": {
             "jestConfig": "libs/check-in/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "check-in-feature-shell": {
-      "projectType": "library",
-      "root": "libs/check-in/feature-shell",
-      "sourceRoot": "libs/check-in/feature-shell/src",
-      "prefix": "check-in",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/check-in/feature-shell/src/**/*.ts",
-              "libs/check-in/feature-shell/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/check-in/feature-shell"
-          ],
-          "options": {
-            "jestConfig": "libs/check-in/feature-shell/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -812,6 +758,60 @@
           ],
           "options": {
             "jestConfig": "libs/seatmap/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "booking-root-feature-shell": {
+      "projectType": "library",
+      "root": "libs/booking/root/feature-shell",
+      "sourceRoot": "libs/booking/root/feature-shell/src",
+      "prefix": "booking",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/booking/root/feature-shell/src/**/*.ts",
+              "libs/booking/root/feature-shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/booking/root/feature-shell"
+          ],
+          "options": {
+            "jestConfig": "libs/booking/root/feature-shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "check-in-root-feature-shell": {
+      "projectType": "library",
+      "root": "libs/check-in/root/feature-shell",
+      "sourceRoot": "libs/check-in/root/feature-shell/src",
+      "prefix": "check-in",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/check-in/root/feature-shell/src/**/*.ts",
+              "libs/check-in/root/feature-shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/check-in/root/feature-shell"
+          ],
+          "options": {
+            "jestConfig": "libs/check-in/root/feature-shell/jest.config.js",
             "passWithNoTests": true
           }
         }

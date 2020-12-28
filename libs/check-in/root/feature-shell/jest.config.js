@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'check-in-feature-shell',
-  preset: '../../../jest.preset.js',
+  displayName: 'check-in-root-feature-shell',
+  preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/check-in/feature-shell',
+  coverageDirectory: '../../../../coverage/libs/check-in/root/feature-shell',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

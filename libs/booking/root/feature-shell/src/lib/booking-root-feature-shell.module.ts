@@ -49,4 +49,4 @@ const bookingFeatureShellRoutes: Route[] = [
     ShellModule,
   ],
 })
-export class BookingFeatureShellModule {}
+export class BookingRootFeatureShellModule {}

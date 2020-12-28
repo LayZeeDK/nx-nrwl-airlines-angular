@@ -18,9 +18,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nrwl-airlines/booking/feature-shell": [
-        "libs/booking/feature-shell/src/index.ts"
-      ],
       "@nrwl-airlines/booking/data-access": [
         "libs/booking/data-access/src/index.ts"
       ],
@@ -39,9 +36,6 @@
       "@nrwl-airlines/check-in/data-access": [
         "libs/check-in/data-access/src/index.ts"
       ],
-      "@nrwl-airlines/check-in/feature-shell": [
-        "libs/check-in/feature-shell/src/index.ts"
-      ],
       "@nrwl-airlines/shared/ui-buttons": [
         "libs/shared/ui-buttons/src/index.ts"
       ],
@@ -53,6 +47,12 @@
       ],
       "@nrwl-airlines/seatmap/data-access": [
         "libs/seatmap/data-access/src/index.ts"
+      ],
+      "@nrwl-airlines/booking/root/feature-shell": [
+        "libs/booking/root/feature-shell/src/index.ts"
+      ],
+      "@nrwl-airlines/check-in/root/feature-shell": [
+        "libs/check-in/root/feature-shell/src/index.ts"
       ]
     }
   },

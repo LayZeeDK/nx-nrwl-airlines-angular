@@ -1,5 +1,5 @@
 {
-  "extends": ["../../../.eslintrc.json"],
+  "extends": ["../../../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
@@ -9,16 +9,16 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "parserOptions": {
-        "project": ["libs/check-in/feature-shell/tsconfig.*?.json"]
+        "project": ["libs/booking/feature-shell/tsconfig.*?.json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
-          { "type": "attribute", "prefix": "check-in", "style": "camelCase" }
+          { "type": "attribute", "prefix": "booking", "style": "camelCase" }
         ],
         "@angular-eslint/component-selector": [
           "error",
-          { "type": "element", "prefix": "check-in", "style": "kebab-case" }
+          { "type": "element", "prefix": "booking", "style": "kebab-case" }
         ]
       }
     },

@@ -35,4 +35,4 @@ const checkInFeatureShellRoutes: Route[] = [
     ShellModule,
   ],
 })
-export class CheckInFeatureShellModule {}
+export class CheckInRootFeatureShellModule {}

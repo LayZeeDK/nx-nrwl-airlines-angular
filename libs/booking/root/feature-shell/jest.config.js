@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'booking-feature-shell',
-  preset: '../../../jest.preset.js',
+  displayName: 'booking-root-feature-shell',
+  preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/booking/feature-shell',
+  coverageDirectory: '../../../../coverage/libs/booking/root/feature-shell',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',
