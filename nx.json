@@ -51,7 +51,7 @@
       "implicitDependencies": ["shared-root-assets", "shared-root-styles"]
     },
     "booking-mobile-app-e2e": {
-      "tags": [],
+      "tags": ["domain:booking", "platform:mobile", "type:e2e"],
       "implicitDependencies": ["booking-mobile-app"]
     },
     "check-in-data-access": {
@@ -62,7 +62,7 @@
       "implicitDependencies": ["shared-root-assets", "shared-root-styles"]
     },
     "check-in-desktop-app-e2e": {
-      "tags": [],
+      "tags": ["domain:check-in", "platform:desktop", "type:e2e"],
       "implicitDependencies": ["check-in-desktop-app"]
     },
     "check-in-mobile-app": {
@@ -70,7 +70,7 @@
       "implicitDependencies": ["shared-root-assets", "shared-root-styles"]
     },
     "check-in-mobile-app-e2e": {
-      "tags": [],
+      "tags": ["domain:check-in", "platform:mobile", "type:e2e"],
       "implicitDependencies": ["check-in-mobile-app"]
     },
     "shared-ui-buttons": {
