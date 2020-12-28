@@ -75,17 +75,17 @@
       "tags": [],
       "implicitDependencies": ["check-in-mobile-app"]
     },
-    "shared-seatmap-data-access": {
-      "tags": ["domain:shared", "scope:seatmap", "type:data-access"]
-    },
-    "shared-seatmap-feature-seat-listing": {
-      "tags": ["domain:shared", "scope:seatmap", "type:feature"]
-    },
     "shared-ui-buttons": {
       "tags": ["domain:shared", "scope:shared", "type:ui"]
     },
     "shared-util-formatting": {
       "tags": ["domain:shared", "scope:shared", "type:util"]
+    },
+    "seatmap-feature-seat-listing": {
+      "tags": ["domain:seatmap", "scope:seatmap", "type:feature"]
+    },
+    "seatmap-data-access": {
+      "tags": ["domain:seatmap", "scope:seatmap", "type:data-access"]
     }
   }
 }

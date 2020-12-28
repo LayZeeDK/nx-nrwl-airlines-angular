@@ -20,7 +20,9 @@
               "apps/booking/desktop-app/src/favicon.ico",
               "apps/booking/desktop-app/src/assets"
             ],
-            "styles": ["apps/booking/desktop-app/src/styles.css"],
+            "styles": [
+              "apps/booking/desktop-app/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -81,7 +83,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/booking/desktop-app"],
+          "outputs": [
+            "coverage/apps/booking/desktop-app"
+          ],
           "options": {
             "jestConfig": "apps/booking/desktop-app/jest.config.js",
             "passWithNoTests": true
@@ -110,7 +114,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/booking/desktop-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/booking/desktop-app-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -132,7 +138,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/booking/feature-shell"],
+          "outputs": [
+            "coverage/libs/booking/feature-shell"
+          ],
           "options": {
             "jestConfig": "libs/booking/feature-shell/jest.config.js",
             "passWithNoTests": true
@@ -157,7 +165,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/booking/data-access"],
+          "outputs": [
+            "coverage/libs/booking/data-access"
+          ],
           "options": {
             "jestConfig": "libs/booking/data-access/jest.config.js",
             "passWithNoTests": true
@@ -182,7 +192,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/root/data-access"],
+          "outputs": [
+            "coverage/libs/shared/root/data-access"
+          ],
           "options": {
             "jestConfig": "libs/shared/root/data-access/jest.config.js",
             "passWithNoTests": true
@@ -207,7 +219,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/root/environments"],
+          "outputs": [
+            "coverage/libs/shared/root/environments"
+          ],
           "options": {
             "jestConfig": "libs/shared/root/environments/jest.config.js",
             "passWithNoTests": true
@@ -232,7 +246,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/booking/feature-passenger-info"],
+          "outputs": [
+            "coverage/libs/booking/feature-passenger-info"
+          ],
           "options": {
             "jestConfig": "libs/booking/feature-passenger-info/jest.config.js",
             "passWithNoTests": true
@@ -257,7 +273,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/booking/feature-flight-search"],
+          "outputs": [
+            "coverage/libs/booking/feature-flight-search"
+          ],
           "options": {
             "jestConfig": "libs/booking/feature-flight-search/jest.config.js",
             "passWithNoTests": true
@@ -284,7 +302,9 @@
               "apps/booking/mobile-app/src/favicon.ico",
               "apps/booking/mobile-app/src/assets"
             ],
-            "styles": ["apps/booking/mobile-app/src/styles.css"],
+            "styles": [
+              "apps/booking/mobile-app/src/styles.css"
+            ],
             "scripts": [],
             "fileReplacements": [
               {
@@ -351,7 +371,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/booking/mobile-app"],
+          "outputs": [
+            "coverage/apps/booking/mobile-app"
+          ],
           "options": {
             "jestConfig": "apps/booking/mobile-app/jest.config.js",
             "passWithNoTests": true
@@ -380,7 +402,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/booking/mobile-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/booking/mobile-app-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -402,7 +426,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/check-in/data-access"],
+          "outputs": [
+            "coverage/libs/check-in/data-access"
+          ],
           "options": {
             "jestConfig": "libs/check-in/data-access/jest.config.js",
             "passWithNoTests": true
@@ -427,7 +453,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/check-in/feature-shell"],
+          "outputs": [
+            "coverage/libs/check-in/feature-shell"
+          ],
           "options": {
             "jestConfig": "libs/check-in/feature-shell/jest.config.js",
             "passWithNoTests": true
@@ -454,7 +482,9 @@
               "apps/check-in/desktop-app/src/favicon.ico",
               "apps/check-in/desktop-app/src/assets"
             ],
-            "styles": ["apps/check-in/desktop-app/src/styles.css"],
+            "styles": [
+              "apps/check-in/desktop-app/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -515,7 +545,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/check-in/desktop-app"],
+          "outputs": [
+            "coverage/apps/check-in/desktop-app"
+          ],
           "options": {
             "jestConfig": "apps/check-in/desktop-app/jest.config.js",
             "passWithNoTests": true
@@ -544,7 +576,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/check-in/desktop-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/check-in/desktop-app-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -568,7 +602,9 @@
               "apps/check-in/mobile-app/src/favicon.ico",
               "apps/check-in/mobile-app/src/assets"
             ],
-            "styles": ["apps/check-in/mobile-app/src/styles.css"],
+            "styles": [
+              "apps/check-in/mobile-app/src/styles.css"
+            ],
             "scripts": [],
             "fileReplacements": [
               {
@@ -635,7 +671,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/check-in/mobile-app"],
+          "outputs": [
+            "coverage/apps/check-in/mobile-app"
+          ],
           "options": {
             "jestConfig": "apps/check-in/mobile-app/jest.config.js",
             "passWithNoTests": true
@@ -664,57 +702,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/check-in/mobile-app-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
-    "shared-seatmap-data-access": {
-      "projectType": "library",
-      "root": "libs/shared/seatmap/data-access",
-      "sourceRoot": "libs/shared/seatmap/data-access/src",
-      "prefix": "nrwl-airlines",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
             "lintFilePatterns": [
-              "libs/shared/seatmap/data-access/src/**/*.ts",
-              "libs/shared/seatmap/data-access/src/**/*.html"
+              "apps/check-in/mobile-app-e2e/**/*.{js,ts}"
             ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/seatmap/data-access"],
-          "options": {
-            "jestConfig": "libs/shared/seatmap/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "shared-seatmap-feature-seat-listing": {
-      "projectType": "library",
-      "root": "libs/shared/seatmap/feature-seat-listing",
-      "sourceRoot": "libs/shared/seatmap/feature-seat-listing/src",
-      "prefix": "seatmap",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/seatmap/feature-seat-listing/src/**/*.ts",
-              "libs/shared/seatmap/feature-seat-listing/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/seatmap/feature-seat-listing"],
-          "options": {
-            "jestConfig": "libs/shared/seatmap/feature-seat-listing/jest.config.js",
-            "passWithNoTests": true
           }
         }
       }
@@ -736,7 +726,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/ui-buttons"],
+          "outputs": [
+            "coverage/libs/shared/ui-buttons"
+          ],
           "options": {
             "jestConfig": "libs/shared/ui-buttons/jest.config.js",
             "passWithNoTests": true
@@ -761,9 +753,65 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/util-formatting"],
+          "outputs": [
+            "coverage/libs/shared/util-formatting"
+          ],
           "options": {
             "jestConfig": "libs/shared/util-formatting/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "seatmap-feature-seat-listing": {
+      "projectType": "library",
+      "root": "libs/seatmap/feature-seat-listing",
+      "sourceRoot": "libs/seatmap/feature-seat-listing/src",
+      "prefix": "seatmap",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/seatmap/feature-seat-listing/src/**/*.ts",
+              "libs/seatmap/feature-seat-listing/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/seatmap/feature-seat-listing"
+          ],
+          "options": {
+            "jestConfig": "libs/seatmap/feature-seat-listing/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "seatmap-data-access": {
+      "projectType": "library",
+      "root": "libs/seatmap/data-access",
+      "sourceRoot": "libs/seatmap/data-access/src",
+      "prefix": "nrwl-airlines",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/seatmap/data-access/src/**/*.ts",
+              "libs/seatmap/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/seatmap/data-access"
+          ],
+          "options": {
+            "jestConfig": "libs/seatmap/data-access/jest.config.js",
             "passWithNoTests": true
           }
         }

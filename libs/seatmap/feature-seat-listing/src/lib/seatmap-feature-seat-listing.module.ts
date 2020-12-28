@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedSeatmapDataAccessModule } from '@nrwl-airlines/shared/seatmap/data-access';
+import { SeatmapDataAccessModule } from '@nrwl-airlines/seatmap/data-access';
 
 import { SeatListingComponent } from './seat-listing/seat-listing.component';
 import { SeatListingModule } from './seat-listing/seat-listing.module';
@@ -10,8 +10,8 @@ import { SeatListingModule } from './seat-listing/seat-listing.module';
     RouterModule.forChild([
       { path: '', pathMatch: 'full', component: SeatListingComponent },
     ]),
-    SharedSeatmapDataAccessModule,
+    SeatmapDataAccessModule,
     SeatListingModule,
   ],
 })
-export class SharedSeatmapFeatureSeatListingModule {}
+export class SeatmapFeatureSeatListingModule {}

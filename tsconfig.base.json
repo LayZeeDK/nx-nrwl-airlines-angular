@@ -10,7 +10,10 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -39,19 +42,22 @@
       "@nrwl-airlines/check-in/feature-shell": [
         "libs/check-in/feature-shell/src/index.ts"
       ],
-      "@nrwl-airlines/shared/seatmap/data-access": [
-        "libs/shared/seatmap/data-access/src/index.ts"
-      ],
-      "@nrwl-airlines/shared/seatmap/feature-seat-listing": [
-        "libs/shared/seatmap/feature-seat-listing/src/index.ts"
-      ],
       "@nrwl-airlines/shared/ui-buttons": [
         "libs/shared/ui-buttons/src/index.ts"
       ],
       "@nrwl-airlines/shared/util-formatting": [
         "libs/shared/util-formatting/src/index.ts"
+      ],
+      "@nrwl-airlines/seatmap/feature-seat-listing": [
+        "libs/seatmap/feature-seat-listing/src/index.ts"
+      ],
+      "@nrwl-airlines/seatmap/data-access": [
+        "libs/seatmap/data-access/src/index.ts"
       ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

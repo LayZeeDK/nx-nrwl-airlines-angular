@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'shared-seatmap-data-access',
-  preset: '../../../../jest.preset.js',
+  displayName: 'seatmap-feature-seat-listing',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -14,7 +14,8 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../../coverage/libs/shared/seatmap/data-access',
+  coverageDirectory:
+    '../../../coverage/libs/seatmap/feature-seat-listing',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

@@ -33,8 +33,8 @@ const bookingFeatureShellRoutes: Route[] = [
       {
         path: 'seat-listing',
         loadChildren: () =>
-          import('@nrwl-airlines/shared/seatmap/feature-seat-listing').then(
-            (module) => module.SharedSeatmapFeatureSeatListingModule
+          import('@nrwl-airlines/seatmap/feature-seat-listing').then(
+            (module) => module.SeatmapFeatureSeatListingModule
           ),
       },
     ],

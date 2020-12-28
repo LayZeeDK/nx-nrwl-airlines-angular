@@ -15,4 +15,4 @@ import { SeatmapEffects } from './+state/seatmap.effects';
     EffectsModule.forFeature([SeatmapEffects]),
   ],
 })
-export class SharedSeatmapDataAccessModule {}
+export class SeatmapDataAccessModule {}
