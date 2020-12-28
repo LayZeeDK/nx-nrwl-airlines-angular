@@ -10,7 +10,20 @@ const checkInFeatureShellRoutes: Route[] = [
   {
     path: '',
     component: ShellComponent,
-    children: [],
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'seat-listing',
+      },
+      {
+        path: 'seat-listing',
+        loadChildren: () =>
+          import('@nrwl-airlines/shared/seatmap/feature-seat-listing').then(
+            (module) => module.SharedSeatmapFeatureSeatListingModule
+          ),
+      },
+    ],
   },
 ];
 

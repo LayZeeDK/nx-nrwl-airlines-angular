@@ -693,6 +693,31 @@
           }
         }
       }
+    },
+    "shared-seatmap-feature-seat-listing": {
+      "projectType": "library",
+      "root": "libs/shared/seatmap/feature-seat-listing",
+      "sourceRoot": "libs/shared/seatmap/feature-seat-listing/src",
+      "prefix": "seatmap",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/seatmap/feature-seat-listing/src/**/*.ts",
+              "libs/shared/seatmap/feature-seat-listing/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/seatmap/feature-seat-listing"],
+          "options": {
+            "jestConfig": "libs/shared/seatmap/feature-seat-listing/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

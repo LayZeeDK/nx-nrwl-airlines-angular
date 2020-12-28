@@ -41,6 +41,9 @@
       ],
       "@nrwl-airlines/shared/seatmap/data-access": [
         "libs/shared/seatmap/data-access/src/index.ts"
+      ],
+      "@nrwl-airlines/shared/seatmap/feature-seat-listing": [
+        "libs/shared/seatmap/feature-seat-listing/src/index.ts"
       ]
     }
   },

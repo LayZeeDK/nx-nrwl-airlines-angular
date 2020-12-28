@@ -30,6 +30,13 @@ const bookingFeatureShellRoutes: Route[] = [
             (module) => module.BookingFeaturePassengerInfoModule
           ),
       },
+      {
+        path: 'seat-listing',
+        loadChildren: () =>
+          import('@nrwl-airlines/shared/seatmap/feature-seat-listing').then(
+            (module) => module.SharedSeatmapFeatureSeatListingModule
+          ),
+      },
     ],
   },
 ];
