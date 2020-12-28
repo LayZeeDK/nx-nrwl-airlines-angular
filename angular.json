@@ -219,7 +219,7 @@
       "projectType": "library",
       "root": "libs/booking/feature-passenger-info",
       "sourceRoot": "libs/booking/feature-passenger-info/src",
-      "prefix": "nrwl-airlines",
+      "prefix": "booking",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",

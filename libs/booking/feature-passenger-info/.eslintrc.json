@@ -16,7 +16,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "nrwl-airlines",
+            "prefix": "booking",
             "style": "camelCase"
           }
         ],
@@ -24,7 +24,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "nrwl-airlines",
+            "prefix": "booking",
             "style": "kebab-case"
           }
         ]
