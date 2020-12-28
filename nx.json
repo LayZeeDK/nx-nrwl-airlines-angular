@@ -74,6 +74,9 @@
     "check-in-mobile-app-e2e": {
       "tags": [],
       "implicitDependencies": ["check-in-mobile-app"]
+    },
+    "shared-seatmap-data-access": {
+      "tags": ["domain:shared", "scope:seatmap", "type:data-access"]
     }
   }
 }

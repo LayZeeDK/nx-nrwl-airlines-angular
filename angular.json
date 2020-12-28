@@ -668,6 +668,31 @@
           }
         }
       }
+    },
+    "shared-seatmap-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/seatmap/data-access",
+      "sourceRoot": "libs/shared/seatmap/data-access/src",
+      "prefix": "nrwl-airlines",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/seatmap/data-access/src/**/*.ts",
+              "libs/shared/seatmap/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/seatmap/data-access"],
+          "options": {
+            "jestConfig": "libs/shared/seatmap/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
