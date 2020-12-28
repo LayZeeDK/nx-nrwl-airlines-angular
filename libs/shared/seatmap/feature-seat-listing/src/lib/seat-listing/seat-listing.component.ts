@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./seat-listing.component.css'],
   templateUrl: './seat-listing.component.html',
 })
-export class SeatListingComponent {}
+export class SeatListingComponent {
+  onSeatConfirmed(isConfirmed: boolean): void {
+    console.log('Is seat confirmed?', isConfirmed);
+  }
+}
