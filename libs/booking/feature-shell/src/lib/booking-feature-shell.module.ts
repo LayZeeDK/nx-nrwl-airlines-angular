@@ -17,14 +17,14 @@ const bookingFeatureShellRoutes: Route[] = [
         redirectTo: 'flight-search',
       },
       {
-        path: 'booking-feature-flight-search',
+        path: 'flight-search',
         loadChildren: () =>
           import('@nrwl-airlines/booking/feature-flight-search').then(
             (module) => module.BookingFeatureFlightSearchModule
           ),
       },
       {
-        path: 'booking-feature-passenger-info',
+        path: 'passenger-info',
         loadChildren: () =>
           import('@nrwl-airlines/booking/feature-passenger-info').then(
             (module) => module.BookingFeaturePassengerInfoModule
