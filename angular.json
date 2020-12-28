@@ -409,6 +409,31 @@
           }
         }
       }
+    },
+    "check-in-feature-shell": {
+      "projectType": "library",
+      "root": "libs/check-in/feature-shell",
+      "sourceRoot": "libs/check-in/feature-shell/src",
+      "prefix": "check-in",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/check-in/feature-shell/src/**/*.ts",
+              "libs/check-in/feature-shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/check-in/feature-shell"],
+          "options": {
+            "jestConfig": "libs/check-in/feature-shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

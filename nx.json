@@ -57,6 +57,9 @@
     },
     "check-in-data-access": {
       "tags": ["domain:check-in", "scope:check-in", "type:data-access"]
+    },
+    "check-in-feature-shell": {
+      "tags": ["domain:check-in", "scope:check-in", "type:shell"]
     }
   }
 }
