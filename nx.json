@@ -86,6 +86,9 @@
     },
     "check-in-root-feature-shell": {
       "tags": ["domain:check-in", "scope:root", "type:shell"]
+    },
+    "shared-root-assets": {
+      "tags": ["domain:shared", "scope:root", "type:assets"]
     }
   }
 }
