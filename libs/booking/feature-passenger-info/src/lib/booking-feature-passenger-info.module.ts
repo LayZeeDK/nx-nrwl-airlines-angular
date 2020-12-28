@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
+import { PassengerInfoComponent } from './passenger-info/passenger-info.component';
 import { PassengerInfoModule } from './passenger-info/passenger-info.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-
     RouterModule.forChild([
-      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
+      { path: '', pathMatch: 'full', component: PassengerInfoComponent },
     ]),
-
     PassengerInfoModule,
   ],
 })

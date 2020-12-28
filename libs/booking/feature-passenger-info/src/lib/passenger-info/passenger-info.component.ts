@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'nrwl-airlines-passenger-info',
+  selector: 'booking-passenger-info',
+  styleUrls: ['./passenger-info.component.css'],
   templateUrl: './passenger-info.component.html',
-  styleUrls: ['./passenger-info.component.css']
 })
-export class PassengerInfoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class PassengerInfoComponent {}
