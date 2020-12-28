@@ -264,6 +264,120 @@
           }
         }
       }
+    },
+    "booking-mobile-app": {
+      "projectType": "application",
+      "root": "apps/booking/mobile-app",
+      "sourceRoot": "apps/booking/mobile-app/src",
+      "prefix": "booking",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/booking/mobile-app",
+            "index": "apps/booking/mobile-app/src/index.html",
+            "main": "apps/booking/mobile-app/src/main.ts",
+            "polyfills": "apps/booking/mobile-app/src/polyfills.ts",
+            "tsConfig": "apps/booking/mobile-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/booking/mobile-app/src/favicon.ico",
+              "apps/booking/mobile-app/src/assets"
+            ],
+            "styles": ["apps/booking/mobile-app/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/booking/mobile-app/src/environments/environment.ts",
+                  "with": "apps/booking/mobile-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "booking-mobile-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "booking-mobile-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "booking-mobile-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/booking/mobile-app/src/**/*.ts",
+              "apps/booking/mobile-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/booking/mobile-app"],
+          "options": {
+            "jestConfig": "apps/booking/mobile-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "booking-mobile-app-e2e": {
+      "root": "apps/booking/mobile-app-e2e",
+      "sourceRoot": "apps/booking/mobile-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/booking/mobile-app-e2e/cypress.json",
+            "tsConfig": "apps/booking/mobile-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "booking-mobile-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "booking-mobile-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/booking/mobile-app-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
     }
   },
   "cli": {

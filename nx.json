@@ -47,6 +47,13 @@
     },
     "booking-feature-flight-search": {
       "tags": ["domain:booking", "scope:booking", "type:feature"]
+    },
+    "booking-mobile-app": {
+      "tags": ["domain:booking", "platform:mobile", "type:app"]
+    },
+    "booking-mobile-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["booking-mobile-app"]
     }
   }
 }

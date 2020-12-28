@@ -8,5 +8,6 @@ module.exports = {
     '<rootDir>/libs/shared/root/environments',
     '<rootDir>/libs/booking/feature-passenger-info',
     '<rootDir>/libs/booking/feature-flight-search',
+    '<rootDir>/apps/booking/mobile-app',
   ],
 };
