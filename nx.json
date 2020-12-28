@@ -60,6 +60,13 @@
     },
     "check-in-feature-shell": {
       "tags": ["domain:check-in", "scope:check-in", "type:shell"]
+    },
+    "check-in-desktop-app": {
+      "tags": ["domain:check-in", "platform:desktop", "type:app"]
+    },
+    "check-in-desktop-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["check-in-desktop-app"]
     }
   }
 }
