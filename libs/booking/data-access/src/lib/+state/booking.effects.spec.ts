@@ -1,18 +1,15 @@
-import { TestBed, async } from '@angular/core/testing';
-
-import { Observable } from 'rxjs';
-
+import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { provideMockStore } from '@ngrx/store/testing';
-
-import { NxModule, DataPersistence } from '@nrwl/angular';
+import { DataPersistence, NxModule } from '@nrwl/angular';
 import { hot } from '@nrwl/angular/testing';
+import { Observable } from 'rxjs';
 
-import { BookingEffects } from './booking.effects';
 import * as BookingActions from './booking.actions';
+import { BookingEffects } from './booking.effects';
 
 describe('BookingEffects', () => {
-  let actions: Observable<any>;
+  let actions: Observable<unknown>;
   let effects: BookingEffects;
 
   beforeEach(() => {

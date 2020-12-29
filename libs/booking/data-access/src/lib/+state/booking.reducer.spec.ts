@@ -1,6 +1,6 @@
-import { BookingEntity } from './booking.models';
 import * as BookingActions from './booking.actions';
-import { State, initialState, reducer } from './booking.reducer';
+import { BookingEntity } from './booking.models';
+import { initialState, reducer, State } from './booking.reducer';
 
 describe('Booking Reducer', () => {
   const createBookingEntity = (id: string, name = '') =>
@@ -8,8 +8,6 @@ describe('Booking Reducer', () => {
       id,
       name: name || `name-${id}`,
     } as BookingEntity);
-
-  beforeEach(() => {});
 
   describe('valid Booking actions', () => {
     it('loadBookingSuccess should return set the list of known Booking', () => {
@@ -28,8 +26,9 @@ describe('Booking Reducer', () => {
 
   describe('unknown action', () => {
     it('should return the previous state', () => {
-      const action = {} as any;
+      const action = {};
 
+      // @ts-expect-error Unknown action
       const result = reducer(initialState, action);
 
       expect(result).toBe(initialState);

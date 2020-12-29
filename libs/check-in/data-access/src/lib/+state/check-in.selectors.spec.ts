@@ -1,17 +1,17 @@
 import { CheckInEntity } from './check-in.models';
-import { State, checkInAdapter, initialState } from './check-in.reducer';
+import { checkInAdapter, CheckInPartialState, initialState } from './check-in.reducer';
 import * as CheckInSelectors from './check-in.selectors';
 
 describe('CheckIn Selectors', () => {
   const ERROR_MSG = 'No Error Available';
-  const getCheckInId = (it) => it['id'];
+  const getCheckInId = (it: CheckInEntity) => it['id'];
   const createCheckInEntity = (id: string, name = '') =>
     ({
       id,
       name: name || `name-${id}`,
     } as CheckInEntity);
 
-  let state;
+  let state: CheckInPartialState;
 
   beforeEach(() => {
     state = {
@@ -41,19 +41,19 @@ describe('CheckIn Selectors', () => {
     });
 
     it('getSelected() should return the selected Entity', () => {
-      const result = CheckInSelectors.getSelected(state);
+      const result = CheckInSelectors.getSelected(state) || { id: '' };
       const selId = getCheckInId(result);
 
       expect(selId).toBe('PRODUCT-BBB');
     });
 
-    it("getCheckInLoaded() should return the current 'loaded' status", () => {
+    it('getCheckInLoaded() should return the current loaded status', () => {
       const result = CheckInSelectors.getCheckInLoaded(state);
 
       expect(result).toBe(true);
     });
 
-    it("getCheckInError() should return the current 'error' state", () => {
+    it('getCheckInError() should return the current error state', () => {
       const result = CheckInSelectors.getCheckInError(state);
 
       expect(result).toBe(ERROR_MSG);

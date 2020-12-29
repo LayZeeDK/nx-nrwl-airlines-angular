@@ -1,17 +1,17 @@
 import { BookingEntity } from './booking.models';
-import { State, bookingAdapter, initialState } from './booking.reducer';
+import { bookingAdapter, BookingPartialState, initialState } from './booking.reducer';
 import * as BookingSelectors from './booking.selectors';
 
 describe('Booking Selectors', () => {
   const ERROR_MSG = 'No Error Available';
-  const getBookingId = (it) => it['id'];
+  const getBookingId = (it: BookingEntity) => it['id'];
   const createBookingEntity = (id: string, name = '') =>
     ({
       id,
       name: name || `name-${id}`,
     } as BookingEntity);
 
-  let state;
+  let state: BookingPartialState;
 
   beforeEach(() => {
     state = {
@@ -41,19 +41,19 @@ describe('Booking Selectors', () => {
     });
 
     it('getSelected() should return the selected Entity', () => {
-      const result = BookingSelectors.getSelected(state);
+      const result = BookingSelectors.getSelected(state) || { id: '' };
       const selId = getBookingId(result);
 
       expect(selId).toBe('PRODUCT-BBB');
     });
 
-    it("getBookingLoaded() should return the current 'loaded' status", () => {
+    it('getBookingLoaded() should return the current loaded status', () => {
       const result = BookingSelectors.getBookingLoaded(state);
 
       expect(result).toBe(true);
     });
 
-    it("getBookingError() should return the current 'error' state", () => {
+    it('getBookingError() should return the current error state', () => {
       const result = BookingSelectors.getBookingError(state);
 
       expect(result).toBe(ERROR_MSG);

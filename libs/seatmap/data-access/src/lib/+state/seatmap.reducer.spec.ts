@@ -1,6 +1,6 @@
-import { SeatmapEntity } from './seatmap.models';
 import * as SeatmapActions from './seatmap.actions';
-import { State, initialState, reducer } from './seatmap.reducer';
+import { SeatmapEntity } from './seatmap.models';
+import { initialState, reducer, State } from './seatmap.reducer';
 
 describe('Seatmap Reducer', () => {
   const createSeatmapEntity = (id: string, name = '') =>
@@ -8,8 +8,6 @@ describe('Seatmap Reducer', () => {
       id,
       name: name || `name-${id}`,
     } as SeatmapEntity);
-
-  beforeEach(() => {});
 
   describe('valid Seatmap actions', () => {
     it('loadSeatmapSuccess should return set the list of known Seatmap', () => {
@@ -28,8 +26,9 @@ describe('Seatmap Reducer', () => {
 
   describe('unknown action', () => {
     it('should return the previous state', () => {
-      const action = {} as any;
+      const action = {};
 
+      // @ts-expect-error Unknown action
       const result = reducer(initialState, action);
 
       expect(result).toBe(initialState);

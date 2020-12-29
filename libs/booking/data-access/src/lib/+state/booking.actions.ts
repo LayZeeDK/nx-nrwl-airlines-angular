@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+
 import { BookingEntity } from './booking.models';
 
 export const init = createAction('[Booking Page] Init');
@@ -10,5 +11,5 @@ export const loadBookingSuccess = createAction(
 
 export const loadBookingFailure = createAction(
   '[Booking/API] Load Booking Failure',
-  props<{ error: any }>()
+  props<{ error: string }>()
 );

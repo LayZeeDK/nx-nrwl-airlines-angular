@@ -1,18 +1,15 @@
-import { TestBed, async } from '@angular/core/testing';
-
-import { Observable } from 'rxjs';
-
+import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { provideMockStore } from '@ngrx/store/testing';
-
-import { NxModule, DataPersistence } from '@nrwl/angular';
+import { DataPersistence, NxModule } from '@nrwl/angular';
 import { hot } from '@nrwl/angular/testing';
+import { Observable } from 'rxjs';
 
-import { CheckInEffects } from './check-in.effects';
 import * as CheckInActions from './check-in.actions';
+import { CheckInEffects } from './check-in.effects';
 
 describe('CheckInEffects', () => {
-  let actions: Observable<any>;
+  let actions: Observable<unknown>;
   let effects: CheckInEffects;
 
   beforeEach(() => {

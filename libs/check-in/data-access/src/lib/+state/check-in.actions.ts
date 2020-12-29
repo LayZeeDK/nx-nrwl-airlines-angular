@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+
 import { CheckInEntity } from './check-in.models';
 
 export const init = createAction('[CheckIn Page] Init');
@@ -10,5 +11,5 @@ export const loadCheckInSuccess = createAction(
 
 export const loadCheckInFailure = createAction(
   '[CheckIn/API] Load CheckIn Failure',
-  props<{ error: any }>()
+  props<{ error: string }>()
 );

@@ -1,6 +1,6 @@
-import { CheckInEntity } from './check-in.models';
 import * as CheckInActions from './check-in.actions';
-import { State, initialState, reducer } from './check-in.reducer';
+import { CheckInEntity } from './check-in.models';
+import { initialState, reducer, State } from './check-in.reducer';
 
 describe('CheckIn Reducer', () => {
   const createCheckInEntity = (id: string, name = '') =>
@@ -8,8 +8,6 @@ describe('CheckIn Reducer', () => {
       id,
       name: name || `name-${id}`,
     } as CheckInEntity);
-
-  beforeEach(() => {});
 
   describe('valid CheckIn actions', () => {
     it('loadCheckInSuccess should return set the list of known CheckIn', () => {
@@ -28,8 +26,9 @@ describe('CheckIn Reducer', () => {
 
   describe('unknown action', () => {
     it('should return the previous state', () => {
-      const action = {} as any;
+      const action = {};
 
+      // @ts-expect-error Unknown action
       const result = reducer(initialState, action);
 
       expect(result).toBe(initialState);
