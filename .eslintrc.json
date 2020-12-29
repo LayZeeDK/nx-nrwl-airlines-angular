@@ -12,7 +12,103 @@
             "enforceBuildableLibDependency": true,
             "allow": [],
             "depConstraints": [
-              { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+              {
+                "sourceTag": "domain:booking",
+                "onlyDependOnLibsWithTags": [
+                  "domain:booking",
+                  "domain:seatmap",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:check-in",
+                "onlyDependOnLibsWithTags": [
+                  "domain:check-in",
+                  "domain:seatmap",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:seatmap",
+                "onlyDependOnLibsWithTags": ["domain:seatmap", "domain:shared"]
+              },
+              {
+                "sourceTag": "platform:desktop",
+                "onlyDependOnLibsWithTags": ["platform:desktop", "platform:web"]
+              },
+              {
+                "sourceTag": "platform:mobile",
+                "onlyDependOnLibsWithTags": ["platform:mobile", "platform:web"]
+              },
+              {
+                "sourceTag": "platform:web",
+                "onlyDependOnLibsWithTags": ["platform:web"]
+              },
+              {
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": [
+                  "type:assets",
+                  "type:environments",
+                  "type:shell",
+                  "type:styles"
+                ]
+              },
+              {
+                "sourceTag": "type:assets",
+                "onlyDependOnLibsWithTags": ["type:assets"]
+              },
+              {
+                "sourceTag": "type:data-access",
+                "onlyDependOnLibsWithTags": [
+                  "type:data-access",
+                  "type:environments",
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:e2e",
+                "onlyDependOnLibsWithTags": ["type:app"]
+              },
+              {
+                "sourceTag": "type:environments",
+                "onlyDependOnLibsWithTags": ["type:environments"]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:data-access",
+                  "type:environments",
+                  "type:feature",
+                  "type:ui",
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:shell",
+                "onlyDependOnLibsWithTags": [
+                  "scope:root",
+                  "type:data-access",
+                  "type:feature"
+                ]
+              },
+              {
+                "sourceTag": "type:styles",
+                "onlyDependOnLibsWithTags": ["type:styles"]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": [
+                  "type:assets",
+                  "type:environments",
+                  "type:styles",
+                  "type:ui",
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:util",
+                "onlyDependOnLibsWithTags": ["type:environments", "type:util"]
+              }
             ]
           }
         ]
