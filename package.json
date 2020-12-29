@@ -1,16 +1,18 @@
 {
   "name": "nrwl-airlines",
   "version": "0.0.0",
+  "private": true,
   "license": "MIT",
   "scripts": {
-    "ng": "nx",
+    "preinstall": "(pnpm remove codelyzer || echo ✅ Codelyzer is already removed.) && (pnpm remove tslint || echo ✅ TSLint is already removed.)",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "ng": "nx",
     "nx": "nx",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "nx workspace-lint && ng lint",
-    "e2e": "ng e2e",
+    "start": "nx serve",
+    "build": "nx run-many --target=build --configuration=production --all --parallel --max-parallel=10",
+    "test": "nx run-many --target=test --all --parallel --max-parallel=10",
+    "lint": "nx workspace-lint && nx run-many --target=lint --all --parallel --max-parallel=10",
+    "e2e": "nx run-many --target=e2e --all",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",
@@ -25,10 +27,8 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help",
-    "preinstall": "(pnpm remove codelyzer || echo ✅ Codelyzer is already removed.) && (pnpm remove tslint || echo ✅ TSLint is already removed.)"
+    "help": "nx help"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^11.0.0",
     "@angular/common": "^11.0.0",
