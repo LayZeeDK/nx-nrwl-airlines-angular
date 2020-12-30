@@ -30,7 +30,7 @@
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "sort-projects": "json -I -f angular.json -e \"this.projects = Object.fromEntries(Object.entries(this.projects).sort(([a], [b]) => (a < b) ? -1 : (a > b) ? 1 : 0));\""
+    "sort-projects": "json -I -f angular.json -e \"this.projects = Object.fromEntries(Object.entries(this.projects).sort(([a], [b]) => (a < b) ? -1 : (a > b) ? 1 : 0));\" && json -I -f nx.json -e \"this.projects = Object.fromEntries(Object.entries(this.projects).sort(([a], [b]) => (a < b) ? -1 : (a > b) ? 1 : 0));\""
   },
   "dependencies": {
     "@angular/animations": "^11.0.0",
