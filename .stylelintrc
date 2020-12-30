@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-sass-guidelines",
+    "stylelint-config-idiomatic-order"
+  ],
+  "rules": {
+    "max-line-length": 80,
+    "order/properties-alphabetical-order": null,
+    "selector-class-pattern": "[a-z]\\d\\-_+",
+    "string-quotes": "single"
+  }
+}
