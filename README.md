@@ -24,3 +24,6 @@ booking and seatmap domains have routed feature libraries.
 
 Projects are tagged and workspace linting rules are set up to enforce
 architectural boundaries.
+
+The workspace uses [ESLint](https://eslint.org/), [Angular ESLint](https://github.com/angular-eslint/angular-eslint),
+and [Stylelint](https://stylelint.io/) for linting targets.
