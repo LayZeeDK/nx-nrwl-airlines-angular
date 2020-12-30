@@ -18,25 +18,171 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "e2e", "lint", "lint-styles", "test"]
+        "cacheableOperations": [
+          "build",
+          "e2e",
+          "lint",
+          "lint-styles",
+          "test"
+        ]
       }
     }
   },
   "projects": {
-    "booking-desktop-app": {
-      "tags": ["domain:booking", "platform:desktop", "type:app"],
-      "implicitDependencies": ["shared-root-assets", "shared-root-styles"]
-    },
-    "booking-desktop-app-e2e": {
-      "tags": ["domain:booking", "platform:desktop", "type:e2e"],
-      "implicitDependencies": ["booking-desktop-app"]
-    },
     "booking-data-access": {
       "tags": [
         "domain:booking",
         "platform:web",
         "scope:booking",
         "type:data-access"
+      ]
+    },
+    "booking-desktop-app": {
+      "tags": [
+        "domain:booking",
+        "platform:desktop",
+        "type:app"
+      ],
+      "implicitDependencies": [
+        "shared-root-assets",
+        "shared-root-styles"
+      ]
+    },
+    "booking-desktop-app-e2e": {
+      "tags": [
+        "domain:booking",
+        "platform:desktop",
+        "type:e2e"
+      ],
+      "implicitDependencies": [
+        "booking-desktop-app"
+      ]
+    },
+    "booking-feature-flight-search": {
+      "tags": [
+        "domain:booking",
+        "platform:web",
+        "scope:booking",
+        "type:feature"
+      ]
+    },
+    "booking-feature-passenger-info": {
+      "tags": [
+        "domain:booking",
+        "platform:web",
+        "scope:booking",
+        "type:feature"
+      ]
+    },
+    "booking-mobile-app": {
+      "tags": [
+        "domain:booking",
+        "platform:mobile",
+        "type:app"
+      ],
+      "implicitDependencies": [
+        "shared-root-assets",
+        "shared-root-styles"
+      ]
+    },
+    "booking-mobile-app-e2e": {
+      "tags": [
+        "domain:booking",
+        "platform:mobile",
+        "type:e2e"
+      ],
+      "implicitDependencies": [
+        "booking-mobile-app"
+      ]
+    },
+    "booking-root-feature-shell": {
+      "tags": [
+        "domain:booking",
+        "platform:web",
+        "scope:root",
+        "type:shell"
+      ]
+    },
+    "check-in-data-access": {
+      "tags": [
+        "domain:check-in",
+        "platform:web",
+        "scope:check-in",
+        "type:data-access"
+      ]
+    },
+    "check-in-desktop-app": {
+      "tags": [
+        "domain:check-in",
+        "platform:desktop",
+        "type:app"
+      ],
+      "implicitDependencies": [
+        "shared-root-assets",
+        "shared-root-styles"
+      ]
+    },
+    "check-in-desktop-app-e2e": {
+      "tags": [
+        "domain:check-in",
+        "platform:desktop",
+        "type:e2e"
+      ],
+      "implicitDependencies": [
+        "check-in-desktop-app"
+      ]
+    },
+    "check-in-mobile-app": {
+      "tags": [
+        "domain:check-in",
+        "platform:mobile",
+        "type:app"
+      ],
+      "implicitDependencies": [
+        "shared-root-assets",
+        "shared-root-styles"
+      ]
+    },
+    "check-in-mobile-app-e2e": {
+      "tags": [
+        "domain:check-in",
+        "platform:mobile",
+        "type:e2e"
+      ],
+      "implicitDependencies": [
+        "check-in-mobile-app"
+      ]
+    },
+    "check-in-root-feature-shell": {
+      "tags": [
+        "domain:check-in",
+        "platform:web",
+        "scope:root",
+        "type:shell"
+      ]
+    },
+    "seatmap-data-access": {
+      "tags": [
+        "domain:seatmap",
+        "platform:web",
+        "scope:seatmap",
+        "type:data-access"
+      ]
+    },
+    "seatmap-feature-seat-listing": {
+      "tags": [
+        "domain:seatmap",
+        "platform:web",
+        "scope:seatmap",
+        "type:feature"
+      ]
+    },
+    "shared-root-assets": {
+      "tags": [
+        "domain:shared",
+        "platform:web",
+        "scope:root",
+        "type:assets"
       ]
     },
     "shared-root-data-access": {
@@ -55,87 +201,29 @@
         "type:environments"
       ]
     },
-    "booking-feature-passenger-info": {
+    "shared-root-styles": {
       "tags": [
-        "domain:booking",
+        "domain:shared",
         "platform:web",
-        "scope:booking",
-        "type:feature"
+        "scope:root",
+        "type:styles"
       ]
-    },
-    "booking-feature-flight-search": {
-      "tags": [
-        "domain:booking",
-        "platform:web",
-        "scope:booking",
-        "type:feature"
-      ]
-    },
-    "booking-mobile-app": {
-      "tags": ["domain:booking", "platform:mobile", "type:app"],
-      "implicitDependencies": ["shared-root-assets", "shared-root-styles"]
-    },
-    "booking-mobile-app-e2e": {
-      "tags": ["domain:booking", "platform:mobile", "type:e2e"],
-      "implicitDependencies": ["booking-mobile-app"]
-    },
-    "check-in-data-access": {
-      "tags": [
-        "domain:check-in",
-        "platform:web",
-        "scope:check-in",
-        "type:data-access"
-      ]
-    },
-    "check-in-desktop-app": {
-      "tags": ["domain:check-in", "platform:desktop", "type:app"],
-      "implicitDependencies": ["shared-root-assets", "shared-root-styles"]
-    },
-    "check-in-desktop-app-e2e": {
-      "tags": ["domain:check-in", "platform:desktop", "type:e2e"],
-      "implicitDependencies": ["check-in-desktop-app"]
-    },
-    "check-in-mobile-app": {
-      "tags": ["domain:check-in", "platform:mobile", "type:app"],
-      "implicitDependencies": ["shared-root-assets", "shared-root-styles"]
-    },
-    "check-in-mobile-app-e2e": {
-      "tags": ["domain:check-in", "platform:mobile", "type:e2e"],
-      "implicitDependencies": ["check-in-mobile-app"]
     },
     "shared-ui-buttons": {
-      "tags": ["domain:shared", "platform:web", "scope:shared", "type:ui"]
+      "tags": [
+        "domain:shared",
+        "platform:web",
+        "scope:shared",
+        "type:ui"
+      ]
     },
     "shared-util-formatting": {
-      "tags": ["domain:shared", "platform:web", "scope:shared", "type:util"]
-    },
-    "seatmap-feature-seat-listing": {
       "tags": [
-        "domain:seatmap",
+        "domain:shared",
         "platform:web",
-        "scope:seatmap",
-        "type:feature"
+        "scope:shared",
+        "type:util"
       ]
-    },
-    "seatmap-data-access": {
-      "tags": [
-        "domain:seatmap",
-        "platform:web",
-        "scope:seatmap",
-        "type:data-access"
-      ]
-    },
-    "booking-root-feature-shell": {
-      "tags": ["domain:booking", "platform:web", "scope:root", "type:shell"]
-    },
-    "check-in-root-feature-shell": {
-      "tags": ["domain:check-in", "platform:web", "scope:root", "type:shell"]
-    },
-    "shared-root-assets": {
-      "tags": ["domain:shared", "platform:web", "scope:root", "type:assets"]
-    },
-    "shared-root-styles": {
-      "tags": ["domain:shared", "platform:web", "scope:root", "type:styles"]
     }
   }
 }
