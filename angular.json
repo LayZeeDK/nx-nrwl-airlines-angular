@@ -1,6 +1,33 @@
 {
   "version": 1,
   "projects": {
+    "booking-data-access": {
+      "projectType": "library",
+      "root": "libs/booking/data-access",
+      "sourceRoot": "libs/booking/data-access/src",
+      "prefix": "nrwl-airlines",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/booking/data-access/src/**/*.ts",
+              "libs/booking/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/booking/data-access"
+          ],
+          "options": {
+            "jestConfig": "libs/booking/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "booking-desktop-app": {
       "projectType": "application",
       "root": "apps/booking/desktop-app",
@@ -28,7 +55,9 @@
                 "output": "assets"
               }
             ],
-            "styles": ["libs/shared/root/styles/src/index.scss"],
+            "styles": [
+              "libs/shared/root/styles/src/index.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -95,7 +124,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/booking/desktop-app"],
+          "outputs": [
+            "coverage/apps/booking/desktop-app"
+          ],
           "options": {
             "jestConfig": "apps/booking/desktop-app/jest.config.js",
             "passWithNoTests": true
@@ -124,81 +155,41 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/booking/desktop-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/booking/desktop-app-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
     },
-    "booking-data-access": {
+    "booking-feature-flight-search": {
       "projectType": "library",
-      "root": "libs/booking/data-access",
-      "sourceRoot": "libs/booking/data-access/src",
-      "prefix": "nrwl-airlines",
+      "root": "libs/booking/feature-flight-search",
+      "sourceRoot": "libs/booking/feature-flight-search/src",
+      "prefix": "booking",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/booking/data-access/src/**/*.ts",
-              "libs/booking/data-access/src/**/*.html"
+              "libs/booking/feature-flight-search/src/**/*.ts",
+              "libs/booking/feature-flight-search/src/**/*.html"
             ]
+          }
+        },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint libs/booking/feature-flight-search/src/**/*.scss"
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/booking/data-access"],
+          "outputs": [
+            "coverage/libs/booking/feature-flight-search"
+          ],
           "options": {
-            "jestConfig": "libs/booking/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "shared-root-data-access": {
-      "projectType": "library",
-      "root": "libs/shared/root/data-access",
-      "sourceRoot": "libs/shared/root/data-access/src",
-      "prefix": "nrwl-airlines",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/root/data-access/src/**/*.ts",
-              "libs/shared/root/data-access/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/root/data-access"],
-          "options": {
-            "jestConfig": "libs/shared/root/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "shared-root-environments": {
-      "projectType": "library",
-      "root": "libs/shared/root/environments",
-      "sourceRoot": "libs/shared/root/environments/src",
-      "prefix": "nrwl-airlines",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/root/environments/src/**/*.ts",
-              "libs/shared/root/environments/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/root/environments"],
-          "options": {
-            "jestConfig": "libs/shared/root/environments/jest.config.js",
+            "jestConfig": "libs/booking/feature-flight-search/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -227,40 +218,11 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/booking/feature-passenger-info"],
+          "outputs": [
+            "coverage/libs/booking/feature-passenger-info"
+          ],
           "options": {
             "jestConfig": "libs/booking/feature-passenger-info/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "booking-feature-flight-search": {
-      "projectType": "library",
-      "root": "libs/booking/feature-flight-search",
-      "sourceRoot": "libs/booking/feature-flight-search/src",
-      "prefix": "booking",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/booking/feature-flight-search/src/**/*.ts",
-              "libs/booking/feature-flight-search/src/**/*.html"
-            ]
-          }
-        },
-        "lint-styles": {
-          "builder": "@nrwl/workspace:run-commands",
-          "options": {
-            "command": "pnpx stylelint libs/booking/feature-flight-search/src/**/*.scss"
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/booking/feature-flight-search"],
-          "options": {
-            "jestConfig": "libs/booking/feature-flight-search/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -293,7 +255,9 @@
                 "output": "assets"
               }
             ],
-            "styles": ["libs/shared/root/styles/src/index.scss"],
+            "styles": [
+              "libs/shared/root/styles/src/index.scss"
+            ],
             "scripts": [],
             "fileReplacements": [
               {
@@ -366,7 +330,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/booking/mobile-app"],
+          "outputs": [
+            "coverage/apps/booking/mobile-app"
+          ],
           "options": {
             "jestConfig": "apps/booking/mobile-app/jest.config.js",
             "passWithNoTests": true
@@ -395,7 +361,42 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/booking/mobile-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/booking/mobile-app-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "booking-root-feature-shell": {
+      "projectType": "library",
+      "root": "libs/booking/root/feature-shell",
+      "sourceRoot": "libs/booking/root/feature-shell/src",
+      "prefix": "booking",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/booking/root/feature-shell/src/**/*.ts",
+              "libs/booking/root/feature-shell/src/**/*.html"
+            ]
+          }
+        },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint libs/booking/root/feature-shell/src/**/*.scss"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/booking/root/feature-shell"
+          ],
+          "options": {
+            "jestConfig": "libs/booking/root/feature-shell/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
@@ -417,7 +418,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/check-in/data-access"],
+          "outputs": [
+            "coverage/libs/check-in/data-access"
+          ],
           "options": {
             "jestConfig": "libs/check-in/data-access/jest.config.js",
             "passWithNoTests": true
@@ -452,7 +455,9 @@
                 "output": "assets"
               }
             ],
-            "styles": ["libs/shared/root/styles/src/index.scss"],
+            "styles": [
+              "libs/shared/root/styles/src/index.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -519,7 +524,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/check-in/desktop-app"],
+          "outputs": [
+            "coverage/apps/check-in/desktop-app"
+          ],
           "options": {
             "jestConfig": "apps/check-in/desktop-app/jest.config.js",
             "passWithNoTests": true
@@ -548,7 +555,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/check-in/desktop-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/check-in/desktop-app-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -580,7 +589,9 @@
                 "output": "assets"
               }
             ],
-            "styles": ["libs/shared/root/styles/src/index.scss"],
+            "styles": [
+              "libs/shared/root/styles/src/index.scss"
+            ],
             "scripts": [],
             "fileReplacements": [
               {
@@ -653,7 +664,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/check-in/mobile-app"],
+          "outputs": [
+            "coverage/apps/check-in/mobile-app"
+          ],
           "options": {
             "jestConfig": "apps/check-in/mobile-app/jest.config.js",
             "passWithNoTests": true
@@ -682,62 +695,68 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/check-in/mobile-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/check-in/mobile-app-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
     },
-    "shared-ui-buttons": {
+    "check-in-root-feature-shell": {
       "projectType": "library",
-      "root": "libs/shared/ui-buttons",
-      "sourceRoot": "libs/shared/ui-buttons/src",
-      "prefix": "nrwl-airlines",
+      "root": "libs/check-in/root/feature-shell",
+      "sourceRoot": "libs/check-in/root/feature-shell/src",
+      "prefix": "check-in",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/shared/ui-buttons/src/**/*.ts",
-              "libs/shared/ui-buttons/src/**/*.html"
+              "libs/check-in/root/feature-shell/src/**/*.ts",
+              "libs/check-in/root/feature-shell/src/**/*.html"
             ]
           }
         },
         "lint-styles": {
           "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "pnpx stylelint libs/shared/ui-buttons/src/**/*.scss"
+            "command": "pnpx stylelint libs/check-in/root/feature-shell/src/**/*.scss"
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/ui-buttons"],
+          "outputs": [
+            "coverage/libs/check-in/root/feature-shell"
+          ],
           "options": {
-            "jestConfig": "libs/shared/ui-buttons/jest.config.js",
+            "jestConfig": "libs/check-in/root/feature-shell/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "shared-util-formatting": {
+    "seatmap-data-access": {
       "projectType": "library",
-      "root": "libs/shared/util-formatting",
-      "sourceRoot": "libs/shared/util-formatting/src",
+      "root": "libs/seatmap/data-access",
+      "sourceRoot": "libs/seatmap/data-access/src",
       "prefix": "nrwl-airlines",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/shared/util-formatting/src/**/*.ts",
-              "libs/shared/util-formatting/src/**/*.html"
+              "libs/seatmap/data-access/src/**/*.ts",
+              "libs/seatmap/data-access/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/util-formatting"],
+          "outputs": [
+            "coverage/libs/seatmap/data-access"
+          ],
           "options": {
-            "jestConfig": "libs/shared/util-formatting/jest.config.js",
+            "jestConfig": "libs/seatmap/data-access/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -766,96 +785,11 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/seatmap/feature-seat-listing"],
+          "outputs": [
+            "coverage/libs/seatmap/feature-seat-listing"
+          ],
           "options": {
             "jestConfig": "libs/seatmap/feature-seat-listing/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "seatmap-data-access": {
-      "projectType": "library",
-      "root": "libs/seatmap/data-access",
-      "sourceRoot": "libs/seatmap/data-access/src",
-      "prefix": "nrwl-airlines",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/seatmap/data-access/src/**/*.ts",
-              "libs/seatmap/data-access/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/seatmap/data-access"],
-          "options": {
-            "jestConfig": "libs/seatmap/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "booking-root-feature-shell": {
-      "projectType": "library",
-      "root": "libs/booking/root/feature-shell",
-      "sourceRoot": "libs/booking/root/feature-shell/src",
-      "prefix": "booking",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/booking/root/feature-shell/src/**/*.ts",
-              "libs/booking/root/feature-shell/src/**/*.html"
-            ]
-          }
-        },
-        "lint-styles": {
-          "builder": "@nrwl/workspace:run-commands",
-          "options": {
-            "command": "pnpx stylelint libs/booking/root/feature-shell/src/**/*.scss"
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/booking/root/feature-shell"],
-          "options": {
-            "jestConfig": "libs/booking/root/feature-shell/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "check-in-root-feature-shell": {
-      "projectType": "library",
-      "root": "libs/check-in/root/feature-shell",
-      "sourceRoot": "libs/check-in/root/feature-shell/src",
-      "prefix": "check-in",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/check-in/root/feature-shell/src/**/*.ts",
-              "libs/check-in/root/feature-shell/src/**/*.html"
-            ]
-          }
-        },
-        "lint-styles": {
-          "builder": "@nrwl/workspace:run-commands",
-          "options": {
-            "command": "pnpx stylelint libs/check-in/root/feature-shell/src/**/*.scss"
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/check-in/root/feature-shell"],
-          "options": {
-            "jestConfig": "libs/check-in/root/feature-shell/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -867,6 +801,60 @@
       "sourceRoot": "libs/shared/root/assets/src",
       "architect": {}
     },
+    "shared-root-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/root/data-access",
+      "sourceRoot": "libs/shared/root/data-access/src",
+      "prefix": "nrwl-airlines",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/root/data-access/src/**/*.ts",
+              "libs/shared/root/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/root/data-access"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/root/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-root-environments": {
+      "projectType": "library",
+      "root": "libs/shared/root/environments",
+      "sourceRoot": "libs/shared/root/environments/src",
+      "prefix": "nrwl-airlines",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/root/environments/src/**/*.ts",
+              "libs/shared/root/environments/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/root/environments"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/root/environments/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "shared-root-styles": {
       "projectType": "library",
       "root": "libs/shared/root/styles",
@@ -876,6 +864,66 @@
           "builder": "@nrwl/workspace:run-commands",
           "options": {
             "command": "pnpx stylelint libs/shared/root/styles/src/**/*.scss"
+          }
+        }
+      }
+    },
+    "shared-ui-buttons": {
+      "projectType": "library",
+      "root": "libs/shared/ui-buttons",
+      "sourceRoot": "libs/shared/ui-buttons/src",
+      "prefix": "nrwl-airlines",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui-buttons/src/**/*.ts",
+              "libs/shared/ui-buttons/src/**/*.html"
+            ]
+          }
+        },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint libs/shared/ui-buttons/src/**/*.scss"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/ui-buttons"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/ui-buttons/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-util-formatting": {
+      "projectType": "library",
+      "root": "libs/shared/util-formatting",
+      "sourceRoot": "libs/shared/util-formatting/src",
+      "prefix": "nrwl-airlines",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/util-formatting/src/**/*.ts",
+              "libs/shared/util-formatting/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/util-formatting"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/util-formatting/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
