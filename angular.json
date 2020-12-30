@@ -87,6 +87,12 @@
             ]
           }
         },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint apps/booking/desktop-app/src/**/*.scss"
+          }
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/booking/desktop-app"],
@@ -213,6 +219,12 @@
             ]
           }
         },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint libs/booking/feature-passenger-info/src/**/*.scss"
+          }
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/booking/feature-passenger-info"],
@@ -236,6 +248,12 @@
               "libs/booking/feature-flight-search/src/**/*.ts",
               "libs/booking/feature-flight-search/src/**/*.html"
             ]
+          }
+        },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint libs/booking/feature-flight-search/src/**/*.scss"
           }
         },
         "test": {
@@ -338,6 +356,12 @@
               "apps/booking/mobile-app/src/**/*.ts",
               "apps/booking/mobile-app/src/**/*.html"
             ]
+          }
+        },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint apps/booking/mobile-app/src/**/*.scss"
           }
         },
         "test": {
@@ -487,6 +511,12 @@
             ]
           }
         },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint apps/check-in/desktop-app/src/**/*.scss"
+          }
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/check-in/desktop-app"],
@@ -615,6 +645,12 @@
             ]
           }
         },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint apps/check-in/mobile-app/src/**/*.scss"
+          }
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/check-in/mobile-app"],
@@ -664,6 +700,12 @@
               "libs/shared/ui-buttons/src/**/*.ts",
               "libs/shared/ui-buttons/src/**/*.html"
             ]
+          }
+        },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint libs/shared/ui-buttons/src/**/*.scss"
           }
         },
         "test": {
@@ -716,6 +758,12 @@
             ]
           }
         },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint libs/seatmap/feature-seat-listing/src/**/*.scss"
+          }
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/seatmap/feature-seat-listing"],
@@ -766,6 +814,12 @@
             ]
           }
         },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint libs/booking/root/feature-shell/src/**/*.scss"
+          }
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/booking/root/feature-shell"],
@@ -791,6 +845,12 @@
             ]
           }
         },
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint libs/check-in/root/feature-shell/src/**/*.scss"
+          }
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/check-in/root/feature-shell"],
@@ -811,7 +871,14 @@
       "projectType": "library",
       "root": "libs/shared/root/styles",
       "sourceRoot": "libs/shared/root/styles/src",
-      "architect": {}
+      "architect": {
+        "lint-styles": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "pnpx stylelint libs/shared/root/styles/src/**/*.scss"
+          }
+        }
+      }
     }
   },
   "cli": {
