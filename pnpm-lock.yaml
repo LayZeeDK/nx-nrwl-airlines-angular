@@ -44,6 +44,7 @@ devDependencies:
   eslint-plugin-cypress: 2.11.2_eslint@7.10.0
   jest: 26.2.2_ts-node@9.1.1
   jest-preset-angular: 8.3.1_d4e2336e85e5b1201d0ec6a7e45c3644
+  json: 10.0.0
   prettier: 2.1.2
   stylelint: 13.8.0
   stylelint-config-idiomatic-order: 8.1.0_stylelint@13.8.0
@@ -8107,6 +8108,13 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
+  /json/10.0.0:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-iK7tAZtpoghibjdB1ncCWykeBMmke3JThUe+rnkD4qkZaglOIQ70Pw7r5UJ4lyUT+7gnw7ehmmLUHDuhqzQD+g==
   /json3/3.3.3:
     dev: true
     resolution:
@@ -13339,6 +13347,7 @@ specifiers:
   eslint-plugin-cypress: ^2.10.3
   jest: 26.2.2
   jest-preset-angular: 8.3.1
+  json: ^10.0.0
   luxon: ^1.25.0
   prettier: 2.1.2
   rxjs: ~6.5.5

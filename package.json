@@ -29,7 +29,8 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "sort-projects": "json -I -f angular.json -e \"this.projects = Object.fromEntries(Object.entries(this.projects).sort(([a], [b]) => (a < b) ? -1 : (a > b) ? 1 : 0));\""
   },
   "dependencies": {
     "@angular/animations": "^11.0.0",
@@ -78,6 +79,7 @@
     "eslint-plugin-cypress": "^2.10.3",
     "jest": "26.2.2",
     "jest-preset-angular": "8.3.1",
+    "json": "^10.0.0",
     "prettier": "2.1.2",
     "stylelint": "^13.8.0",
     "stylelint-config-idiomatic-order": "^8.1.0",
