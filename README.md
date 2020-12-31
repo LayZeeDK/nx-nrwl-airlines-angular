@@ -1,7 +1,7 @@
 # Nrwl Airlines Angular edition
 
 A sample [Nx](https://nx.dev/) workspace generated using the Nx Angular
-workspace preset.
+workspace preset meant to show off workspace structure and configuration.
 
 Structure-wise a somewhat realistic client-side workspace loosely based on
 examples from the book "[Enterprise Angular Monorepo Patterns](https://go.nrwl.io/angular-enterprise-monorepo-patterns-new-book)"
