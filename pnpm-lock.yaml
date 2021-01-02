@@ -28,6 +28,7 @@ devDependencies:
   '@ngrx/store-devtools': 10.0.0_@ngrx+store@10.0.0+rxjs@6.5.5
   '@nrwl/cli': 11.0.18
   '@nrwl/cypress': 11.0.18_c177ff3b3e7afd7cb4c623b31fd84e8d
+  '@nrwl/devkit': 11.0.20
   '@nrwl/eslint-plugin-nx': 11.0.18_6237246bab0c7efaf1f74ace93610d7c
   '@nrwl/jest': 11.0.18_@nrwl+workspace@11.0.18
   '@nrwl/tao': 11.0.18
@@ -2548,6 +2549,15 @@ packages:
       tslib: 2.0.3
     resolution:
       integrity: sha512-g82QYmjk3+vhNef6s4iAIs8leYcjLRARw3isDRS/IiCwoxEwRs9DPKkxT939z/imRNLbNzcV9BSjc9+S0jhblg==
+  /@nrwl/devkit/11.0.20:
+    dependencies:
+      '@nrwl/tao': 11.0.20
+      ejs: 3.1.5
+      strip-json-comments: 2.0.1
+      tslib: 2.0.3
+    dev: true
+    resolution:
+      integrity: sha512-enhdAZeC96ZQad9lciNtm7CGNjI8PUNme4J5/y2ZlGMShrqDaijag9yktVVkErfdizaXL4o2Rny7UFXSXdElEw==
   /@nrwl/eslint-plugin-nx/11.0.18_6237246bab0c7efaf1f74ace93610d7c:
     dependencies:
       '@angular-devkit/core': 11.0.5
@@ -2608,6 +2618,25 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-ZNFWtSPj3w0y8gm6fhQ32v92m7uCXlUWVzuOEATt3ukt46O/zgrQMGy5MdBn2VoQ4S39sDOR3gMLhhzYHWAEdQ==
+  /@nrwl/tao/11.0.20:
+    dependencies:
+      '@angular-devkit/architect': 0.1100.5
+      '@angular-devkit/core': 11.0.5
+      '@angular-devkit/schematics': 11.0.5
+      chalk: 4.1.0
+      fs-extra: 7.0.1
+      inquirer: 6.5.2
+      minimist: 1.2.5
+      rxjs: 6.5.5
+      semver: 6.3.0
+      strip-json-comments: 2.0.1
+      tmp: 0.0.33
+      tslib: 2.0.3
+      yargs-parser: 20.0.0
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-S/jaeenZ0ueQZgz54AGhMtK1Obs6KTwsojfHdB+FiEve2ipBbKKeBZXXfeXlH2priH5ej5FhosCEV1DKqXLlUg==
   /@nrwl/workspace/11.0.18_prettier@2.1.2:
     dependencies:
       '@angular-devkit/architect': 0.1100.5
@@ -7022,7 +7051,7 @@ packages:
       lodash: 4.17.20
       mute-stream: 0.0.7
       run-async: 2.4.1
-      rxjs: 6.6.3
+      rxjs: 6.5.5
       string-width: 2.1.1
       strip-ansi: 5.2.0
       through: 2.3.8
@@ -10972,7 +11001,6 @@ packages:
   /rxjs/6.5.5:
     dependencies:
       tslib: 1.14.1
-    dev: false
     engines:
       npm: '>=2.0.0'
     resolution:
@@ -13331,6 +13359,7 @@ specifiers:
   '@nrwl/angular': 11.0.18
   '@nrwl/cli': 11.0.18
   '@nrwl/cypress': 11.0.18
+  '@nrwl/devkit': ^11.0.20
   '@nrwl/eslint-plugin-nx': 11.0.18
   '@nrwl/jest': 11.0.18
   '@nrwl/tao': 11.0.18

@@ -63,6 +63,7 @@
     "@ngrx/store-devtools": "^10.0.0",
     "@nrwl/cli": "11.0.18",
     "@nrwl/cypress": "11.0.18",
+    "@nrwl/devkit": "^11.0.20",
     "@nrwl/eslint-plugin-nx": "11.0.18",
     "@nrwl/jest": "11.0.18",
     "@nrwl/tao": "11.0.18",
