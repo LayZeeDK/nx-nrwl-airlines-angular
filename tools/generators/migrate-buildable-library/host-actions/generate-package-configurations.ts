@@ -1,16 +1,18 @@
 import {
   formatFiles,
   generateFiles,
+  readJson,
   readProjectConfiguration,
   Tree,
 } from '@nrwl/devkit';
 import * as path from 'path';
 
+import { TsconfigBaseJson } from '../configurations/tsconfig-base-json';
 import { GeneratorOptions } from '../schema';
 
 interface FileTemplateReplacements {
   readonly enableIvy: boolean;
-  readonly projectImportPath: string;
+  readonly importPath: string;
   readonly projectRoot: string;
   readonly tmpl: '';
   readonly workspaceRootRelativePath: string;
@@ -25,12 +27,29 @@ export async function generatePackageConfigurations(
   const workspaceRootRelativePath = new Array(projectRootLevelsDeepCount)
     .fill('..')
     .join('/');
+  const tsconfigBaseFilePath = 'tsconfig.base.json';
+
+  if (!host.exists(tsconfigBaseFilePath)) {
+    throw new Error(`${tsconfigBaseFilePath} is missing`);
+  }
+
+  const tsconfigBaseJson = readJson<TsconfigBaseJson>(
+    host,
+    tsconfigBaseFilePath
+  );
+  const pathMap = tsconfigBaseJson.compilerOptions.paths ?? {};
+  const maybePathEntry = Object.entries(pathMap).find(([, publicApis]) =>
+    publicApis.some((publicApi) => publicApi.startsWith(project.root))
+  );
+
+  if (!maybePathEntry) {
+    throw new Error(`Import path is missing for project "${projectName}"`);
+  }
+
+  const [importPath] = maybePathEntry;
   const replacements: FileTemplateReplacements = {
     enableIvy,
-    // projectImportPath: '@npmScope/domain/name',
-    projectImportPath: '@nrwl-airlines/shared/ui-buttons',
-    // projectRoot: 'libs/domain/name',
-    // projectRoot: 'libs/shared/ui-buttons',
+    importPath,
     projectRoot: project.root,
     tmpl: '',
     workspaceRootRelativePath,

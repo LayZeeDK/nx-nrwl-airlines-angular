@@ -1,4 +1,4 @@
 {
-  "name": "<%= projectImportPath %>",
+  "name": "<%= importPath %>",
   "private": true
 }

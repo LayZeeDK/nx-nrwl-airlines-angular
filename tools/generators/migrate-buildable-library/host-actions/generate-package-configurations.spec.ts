@@ -8,6 +8,7 @@ import * as path from 'path';
 
 import { NgPackageJson } from '../configurations/ng-package-json';
 import { PackageJson } from '../configurations/package-json';
+import { TsconfigBaseJson } from '../configurations/tsconfig-base-json';
 import {
   AngularCompilerOptions,
   TsconfigJson,
@@ -23,6 +24,7 @@ describe(generatePackageConfigurations.name, () => {
   beforeEach(() => {
     host = createTreeWithEmptyWorkspace();
     projectName = 'shared-ui-buttons';
+    importPath = `@nrwl-airlines/shared/ui-buttons`;
     project = {
       projectType: 'library',
       root: 'libs/shared/ui-buttons',
@@ -47,16 +49,25 @@ describe(generatePackageConfigurations.name, () => {
         },
       },
     };
+    const tsconfigBase: TsconfigBaseJson = {
+      compilerOptions: {
+        paths: {
+          [importPath]: [`${project.root}/src/index.ts`],
+        },
+      },
+    };
     options = {
       enableIvy: true,
       projectName,
       skipFormat: false,
     };
 
+    host.write('tsconfig.base.json', JSON.stringify(tsconfigBase));
     addProjectConfiguration(host, projectName, project);
   });
 
   let host: Tree;
+  let importPath: string;
   let options: GeneratorOptions;
   let project: ProjectConfiguration;
   let projectName: string;
@@ -82,7 +93,7 @@ describe(generatePackageConfigurations.name, () => {
     it('generates package.json', async () => {
       const filePath = path.join(project.root, 'package.json');
       const expectedPackageJson: PackageJson = {
-        name: '@nrwl-airlines/shared/ui-buttons',
+        name: importPath,
         private: true,
       };
 
