@@ -8,16 +8,8 @@ import {
 } from '@nrwl/devkit';
 import * as path from 'path';
 
-import { TsconfigBaseJson } from '../configurations/tsconfig-base-json';
 import { GeneratorOptions } from '../schema';
-
-interface FileTemplateReplacements {
-  readonly enableIvy: boolean;
-  readonly importPath: string;
-  readonly offsetFromRoot: string;
-  readonly projectRoot: string;
-  readonly tmpl: '';
-}
+import { FileTemplateReplacements, TsconfigBaseJson } from '../types';
 
 function getImportPathOrThrow(
   host: Tree,

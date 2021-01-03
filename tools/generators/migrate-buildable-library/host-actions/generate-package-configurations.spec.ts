@@ -6,14 +6,14 @@ import {
 import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
 import * as path from 'path';
 
-import { NgPackageJson } from '../configurations/ng-package-json';
-import { PackageJson } from '../configurations/package-json';
-import { TsconfigBaseJson } from '../configurations/tsconfig-base-json';
+import { GeneratorOptions } from '../schema';
 import {
   AngularCompilerOptions,
+  NgPackageJson,
+  PackageJson,
+  TsconfigBaseJson,
   TsconfigJson,
-} from '../configurations/tsconfig-json';
-import { GeneratorOptions } from '../schema';
+} from '../types';
 import { generatePackageConfigurations } from './generate-package-configurations';
 
 describe(generatePackageConfigurations.name, () => {
