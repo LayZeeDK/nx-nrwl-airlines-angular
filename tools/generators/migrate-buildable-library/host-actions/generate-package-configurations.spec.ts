@@ -6,13 +6,14 @@ import {
 import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
 import * as path from 'path';
 
-import { GeneratorOptions } from '../schema';
-import { generatePackageConfigurations } from './generate-package-configurations';
+import { NgPackageJson } from '../configurations/ng-package-json';
+import { PackageJson } from '../configurations/package-json';
 import {
   AngularCompilerOptions,
-  createTsconfig,
   TsconfigJson,
-} from './tsconfig-json';
+} from '../configurations/tsconfig-json';
+import { GeneratorOptions } from '../schema';
+import { generatePackageConfigurations } from './generate-package-configurations';
 
 describe(generatePackageConfigurations.name, () => {
   function readJsonFile<TJson = unknown>(filePath: string): TJson {
@@ -63,23 +64,46 @@ describe(generatePackageConfigurations.name, () => {
   describe('Package configurations', () => {
     it('generates ng-package.json', async () => {
       const filePath = path.join(project.root, 'ng-package.json');
+      const expectedNgPackageJson: NgPackageJson = {
+        $schema: '../../../node_modules/ng-packagr/ng-package.schema.json',
+        dest: `../../../dist/${project.root}`,
+        lib: {
+          entryFile: 'src/index.ts',
+        },
+      };
 
       await generatePackageConfigurations(host, options);
 
       expect(host.exists(filePath)).toBe(true);
+      const actualNgPackageJson: NgPackageJson = readJsonFile(filePath);
+      expect(actualNgPackageJson).toEqual(expectedNgPackageJson);
     });
 
     it('generates package.json', async () => {
       const filePath = path.join(project.root, 'package.json');
+      const expectedPackageJson: PackageJson = {
+        name: '@nrwl-airlines/shared/ui-buttons',
+        private: true,
+      };
 
       await generatePackageConfigurations(host, options);
 
       expect(host.exists(filePath)).toBe(true);
+      const actualPackageJson: PackageJson = readJsonFile(filePath);
+      expect(actualPackageJson).toEqual(expectedPackageJson);
     });
 
     it('generates tsconfig.lib.prod.json', async () => {
       const filePath = path.join(project.root, 'tsconfig.lib.prod.json');
-      const expectedTsconfig = createTsconfig();
+      const expectedTsconfig: TsconfigJson = {
+        extends: './tsconfig.lib.json',
+        compilerOptions: {
+          declarationMap: false,
+        },
+        angularCompilerOptions: {
+          enableIvy: true,
+        },
+      };
 
       await generatePackageConfigurations(host, options);
 
@@ -101,13 +125,13 @@ describe(generatePackageConfigurations.name, () => {
         ...options,
         enableIvy: true,
       };
+      const expectedAngularCompilerOptions: AngularCompilerOptions = {
+        enableIvy: true,
+      };
 
       await generatePackageConfigurations(host, options);
 
       const actualTsconfig: TsconfigJson = readJsonFile(filePath);
-      const expectedAngularCompilerOptions: AngularCompilerOptions = {
-        enableIvy: true,
-      };
       expect(actualTsconfig.angularCompilerOptions).toEqual(
         expectedAngularCompilerOptions
       );
@@ -118,11 +142,11 @@ describe(generatePackageConfigurations.name, () => {
         ...options,
         enableIvy: false,
       };
+      const expectedAngularCompilerOptions: AngularCompilerOptions = {};
 
       await generatePackageConfigurations(host, options);
 
       const actualTsconfig: TsconfigJson = readJsonFile(filePath);
-      const expectedAngularCompilerOptions: AngularCompilerOptions = {};
       expect(actualTsconfig.angularCompilerOptions).toEqual(
         expectedAngularCompilerOptions
       );

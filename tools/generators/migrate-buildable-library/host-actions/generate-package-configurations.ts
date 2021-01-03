@@ -1,4 +1,9 @@
-import { formatFiles, generateFiles, readProjectConfiguration, Tree } from '@nrwl/devkit';
+import {
+  formatFiles,
+  generateFiles,
+  readProjectConfiguration,
+  Tree,
+} from '@nrwl/devkit';
 import * as path from 'path';
 
 import { GeneratorOptions } from '../schema';
@@ -16,6 +21,10 @@ export async function generatePackageConfigurations(
   { enableIvy, projectName, skipFormat }: GeneratorOptions
 ) {
   const project = readProjectConfiguration(host, projectName);
+  const projectRootLevelsDeepCount = project.root.match(/[/\\]/g).length + 1;
+  const workspaceRootRelativePath = new Array(projectRootLevelsDeepCount)
+    .fill('..')
+    .join('/');
   const replacements: FileTemplateReplacements = {
     enableIvy,
     // projectImportPath: '@npmScope/domain/name',
@@ -24,7 +33,7 @@ export async function generatePackageConfigurations(
     // projectRoot: 'libs/shared/ui-buttons',
     projectRoot: project.root,
     tmpl: '',
-    workspaceRootRelativePath: '../../..',
+    workspaceRootRelativePath,
   };
 
   generateFiles(
