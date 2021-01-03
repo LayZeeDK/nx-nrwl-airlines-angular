@@ -1,17 +1,13 @@
-import {
-  addProjectConfiguration,
-  ProjectConfiguration,
-  readJson,
-  Tree,
-} from '@nrwl/devkit';
+import { addProjectConfiguration, ProjectConfiguration, readJson, Tree } from '@nrwl/devkit';
 import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
 import * as path from 'path';
 
 import { GeneratorOptions } from '../schema';
 import {
   AngularCompilerOptions,
+  BuildableLibraryPackageJson,
   NgPackageJson,
-  PackageJson,
+  RootPackageJson,
   TsconfigBaseJson,
   TsconfigJson,
 } from '../types';
@@ -89,7 +85,7 @@ describe(generatePackageConfigurations.name, () => {
 
     it('generates package.json', async () => {
       const filePath = path.join(project.root, 'package.json');
-      const expectedPackageJson: PackageJson = {
+      const expectedPackageJson: BuildableLibraryPackageJson = {
         name: importPath,
         private: true,
       };
@@ -97,7 +93,10 @@ describe(generatePackageConfigurations.name, () => {
       await generatePackageConfigurations(host, options);
 
       expect(host.exists(filePath)).toBe(true);
-      const actualPackageJson: PackageJson = readJson(host, filePath);
+      const actualPackageJson: BuildableLibraryPackageJson = readJson(
+        host,
+        filePath
+      );
       expect(actualPackageJson).toEqual(expectedPackageJson);
     });
 
@@ -158,6 +157,35 @@ describe(generatePackageConfigurations.name, () => {
       expect(actualTsconfig.angularCompilerOptions).toEqual(
         expectedAngularCompilerOptions
       );
+    });
+  });
+
+  describe('ng-packagr', () => {
+    it('installs ng-packagr when not installed', async () => {
+      await generatePackageConfigurations(host, options);
+
+      const { devDependencies = {} } = readJson<RootPackageJson>(
+        host,
+        'package.json'
+      );
+      expect(devDependencies['ng-packagr']).toBe('*');
+    });
+
+    it('leaves ng-packagr version intact when already installed', async () => {
+      const packageJson: RootPackageJson = {
+        devDependencies: {
+          ['ng-packagr']: '13.37.0',
+        },
+      };
+      host.write('package.json', JSON.stringify(packageJson));
+
+      await generatePackageConfigurations(host, options);
+
+      const { devDependencies = {} } = readJson<RootPackageJson>(
+        host,
+        'package.json'
+      );
+      expect(devDependencies['ng-packagr']).toBe('13.37.0');
     });
   });
 

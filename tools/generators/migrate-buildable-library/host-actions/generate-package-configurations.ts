@@ -1,6 +1,7 @@
 import {
   formatFiles,
   generateFiles,
+  installPackagesTask,
   offsetFromRoot,
   readJson,
   readProjectConfiguration,
@@ -10,6 +11,7 @@ import * as path from 'path';
 
 import { GeneratorOptions } from '../schema';
 import { FileTemplateReplacements, TsconfigBaseJson } from '../types';
+import { installNgPackagr } from './install-ng-packagr';
 
 function getImportPathOrThrow(
   host: Tree,
@@ -64,8 +66,13 @@ export async function generatePackageConfigurations(
     project.root,
     replacements
   );
+  installNgPackagr(host);
 
   if (!skipFormat) {
     await formatFiles(host);
   }
+
+  return () => {
+    installPackagesTask(host);
+  };
 }
