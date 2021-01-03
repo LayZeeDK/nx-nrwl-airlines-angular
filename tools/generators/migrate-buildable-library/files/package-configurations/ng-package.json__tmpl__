@@ -1,6 +1,6 @@
 {
-  "$schema": "<%= workspaceRootRelativePath %>/node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "<%= workspaceRootRelativePath %>/dist/<%= projectRoot %>",
+  "$schema": "<%= offsetFromRoot %>node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "<%= offsetFromRoot %>dist/<%= projectRoot %>",
   "lib": {
     "entryFile": "src/index.ts"
   }

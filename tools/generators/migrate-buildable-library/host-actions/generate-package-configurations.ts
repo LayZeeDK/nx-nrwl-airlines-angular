@@ -1,6 +1,7 @@
 import {
   formatFiles,
   generateFiles,
+  offsetFromRoot,
   readJson,
   readProjectConfiguration,
   Tree,
@@ -13,20 +14,18 @@ import { GeneratorOptions } from '../schema';
 interface FileTemplateReplacements {
   readonly enableIvy: boolean;
   readonly importPath: string;
+  readonly offsetFromRoot: string;
   readonly projectRoot: string;
   readonly tmpl: '';
-  readonly workspaceRootRelativePath: string;
 }
 
-export async function generatePackageConfigurations(
+function getImportPathOrThrow(
   host: Tree,
-  { enableIvy, projectName, skipFormat }: GeneratorOptions
-) {
-  const project = readProjectConfiguration(host, projectName);
-  const projectRootLevelsDeepCount = project.root.match(/[/\\]/g).length + 1;
-  const workspaceRootRelativePath = new Array(projectRootLevelsDeepCount)
-    .fill('..')
-    .join('/');
+  {
+    projectName,
+    projectRoot,
+  }: { readonly projectName: string; readonly projectRoot: string }
+): string {
   const tsconfigBaseFilePath = 'tsconfig.base.json';
 
   if (!host.exists(tsconfigBaseFilePath)) {
@@ -39,7 +38,7 @@ export async function generatePackageConfigurations(
   );
   const pathMap = tsconfigBaseJson.compilerOptions.paths ?? {};
   const maybePathEntry = Object.entries(pathMap).find(([, publicApis]) =>
-    publicApis.some((publicApi) => publicApi.startsWith(project.root))
+    publicApis.some((publicApi) => publicApi.startsWith(projectRoot))
   );
 
   if (!maybePathEntry) {
@@ -47,12 +46,24 @@ export async function generatePackageConfigurations(
   }
 
   const [importPath] = maybePathEntry;
+
+  return importPath;
+}
+
+export async function generatePackageConfigurations(
+  host: Tree,
+  { enableIvy, projectName, skipFormat }: GeneratorOptions
+) {
+  const project = readProjectConfiguration(host, projectName);
   const replacements: FileTemplateReplacements = {
     enableIvy,
-    importPath,
+    importPath: getImportPathOrThrow(host, {
+      projectName,
+      projectRoot: project.root,
+    }),
+    offsetFromRoot: offsetFromRoot(project.root),
     projectRoot: project.root,
     tmpl: '',
-    workspaceRootRelativePath,
   };
 
   generateFiles(
