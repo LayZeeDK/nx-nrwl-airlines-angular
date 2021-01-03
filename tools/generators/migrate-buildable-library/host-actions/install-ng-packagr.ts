@@ -20,5 +20,5 @@ export function installNgPackagr(host: Tree) {
     },
   };
 
-  host.write(packageJsonPath, JSON.stringify(modifiedPackageJson));
+  host.write(packageJsonPath, JSON.stringify(modifiedPackageJson, null, 2));
 }
