@@ -160,4 +160,31 @@ describe(generatePackageConfigurations.name, () => {
       );
     });
   });
+
+  describe('Errors', () => {
+    const tsconfigBaseFilePath = 'tsconfig.base.json';
+
+    it('throws an error if tsconfig.base.json is missing', async () => {
+      host.delete(tsconfigBaseFilePath);
+
+      const act = () => generatePackageConfigurations(host, options);
+
+      await expect(act).rejects.toThrowError(
+        `${tsconfigBaseFilePath} is missing`
+      );
+    });
+
+    it('throws an error if import path is missing', async () => {
+      const noPathMap: TsconfigBaseJson = {
+        compilerOptions: {},
+      };
+      host.write(tsconfigBaseFilePath, JSON.stringify(noPathMap));
+
+      const act = () => generatePackageConfigurations(host, options);
+
+      await expect(act).rejects.toThrowError(
+        `Import path is missing for project "${projectName}"`
+      );
+    });
+  });
 });
