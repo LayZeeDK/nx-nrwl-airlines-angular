@@ -16,9 +16,9 @@ import { generatePackageConfigurations } from './generate-package-configurations
 describe(generatePackageConfigurations.name, () => {
   beforeEach(() => {
     host = createTreeWithEmptyWorkspace();
-    projectName = 'shared-ui-buttons';
+    project = 'shared-ui-buttons';
     importPath = `@nrwl-airlines/shared/ui-buttons`;
-    project = {
+    projectConfiguration = {
       projectType: 'library',
       root: 'libs/shared/ui-buttons',
       sourceRoot: 'libs/shared/ui-buttons/src',
@@ -45,32 +45,32 @@ describe(generatePackageConfigurations.name, () => {
     const tsconfigBase: TsconfigBaseJson = {
       compilerOptions: {
         paths: {
-          [importPath]: [`${project.root}/src/index.ts`],
+          [importPath]: [`${projectConfiguration.root}/src/index.ts`],
         },
       },
     };
     options = {
       enableIvy: true,
-      projectName,
+      project,
       skipFormat: false,
     };
 
     host.write('tsconfig.base.json', JSON.stringify(tsconfigBase));
-    addProjectConfiguration(host, projectName, project);
+    addProjectConfiguration(host, project, projectConfiguration);
   });
 
   let host: Tree;
   let importPath: string;
   let options: GeneratorOptions;
-  let project: ProjectConfiguration;
-  let projectName: string;
+  let projectConfiguration: ProjectConfiguration;
+  let project: string;
 
   describe('Package configurations', () => {
     it('generates ng-package.json', async () => {
-      const filePath = path.join(project.root, 'ng-package.json');
+      const filePath = path.join(projectConfiguration.root, 'ng-package.json');
       const expectedNgPackageJson: NgPackageJson = {
         $schema: '../../../node_modules/ng-packagr/ng-package.schema.json',
-        dest: `../../../dist/${project.root}`,
+        dest: `../../../dist/${projectConfiguration.root}`,
         lib: {
           entryFile: 'src/index.ts',
         },
@@ -84,7 +84,7 @@ describe(generatePackageConfigurations.name, () => {
     });
 
     it('generates package.json', async () => {
-      const filePath = path.join(project.root, 'package.json');
+      const filePath = path.join(projectConfiguration.root, 'package.json');
       const expectedPackageJson: BuildableLibraryPackageJson = {
         name: importPath,
         private: true,
@@ -101,7 +101,10 @@ describe(generatePackageConfigurations.name, () => {
     });
 
     it('generates tsconfig.lib.prod.json', async () => {
-      const filePath = path.join(project.root, 'tsconfig.lib.prod.json');
+      const filePath = path.join(
+        projectConfiguration.root,
+        'tsconfig.lib.prod.json'
+      );
       const expectedTsconfig: TsconfigJson = {
         extends: './tsconfig.lib.json',
         compilerOptions: {
@@ -122,7 +125,7 @@ describe(generatePackageConfigurations.name, () => {
 
   describe('enableIvy option', () => {
     beforeEach(() => {
-      filePath = path.join(project.root, 'tsconfig.lib.prod.json');
+      filePath = path.join(projectConfiguration.root, 'tsconfig.lib.prod.json');
     });
 
     let filePath: string;
@@ -211,7 +214,7 @@ describe(generatePackageConfigurations.name, () => {
       const act = () => generatePackageConfigurations(host, options);
 
       await expect(act).rejects.toThrowError(
-        `Import path is missing for project "${projectName}"`
+        `Import path is missing for project "${project}"`
       );
     });
   });

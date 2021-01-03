@@ -6,7 +6,7 @@ export interface GeneratorOptions {
   /**
    * Angular library project name
    */
-  readonly projectName: string;
+  readonly project: string;
   /**
    * Skip formatting files?
    */

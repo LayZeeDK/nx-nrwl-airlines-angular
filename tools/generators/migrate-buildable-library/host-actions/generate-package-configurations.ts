@@ -16,9 +16,9 @@ import { installNgPackagr } from './install-ng-packagr';
 function getImportPathOrThrow(
   host: Tree,
   {
-    projectName,
+    project,
     projectRoot,
-  }: { readonly projectName: string; readonly projectRoot: string }
+  }: { readonly project: string; readonly projectRoot: string }
 ): string {
   const tsconfigBaseJson = readJson<TsconfigBaseJson>(
     host,
@@ -30,7 +30,7 @@ function getImportPathOrThrow(
   );
 
   if (!maybePathEntry) {
-    throw new Error(`Import path is missing for project "${projectName}"`);
+    throw new Error(`Import path is missing for project "${project}"`);
   }
 
   const [importPath] = maybePathEntry;
@@ -40,29 +40,29 @@ function getImportPathOrThrow(
 
 export async function generatePackageConfigurations(
   host: Tree,
-  { enableIvy, projectName, skipFormat }: GeneratorOptions
+  options: GeneratorOptions
 ) {
-  const project = readProjectConfiguration(host, projectName);
+  const projectConfiguration = readProjectConfiguration(host, options.project);
   const replacements: FileTemplateReplacements = {
-    enableIvy,
+    enableIvy: options.enableIvy,
     importPath: getImportPathOrThrow(host, {
-      projectName,
-      projectRoot: project.root,
+      project: options.project,
+      projectRoot: projectConfiguration.root,
     }),
-    offsetFromRoot: offsetFromRoot(project.root),
-    projectRoot: project.root,
+    offsetFromRoot: offsetFromRoot(projectConfiguration.root),
+    projectRoot: projectConfiguration.root,
     tmpl: '',
   };
 
   generateFiles(
     host,
     path.join(__dirname, '../files/package-configurations'),
-    project.root,
+    projectConfiguration.root,
     replacements
   );
   installNgPackagr(host);
 
-  if (!skipFormat) {
+  if (!options.skipFormat) {
     await formatFiles(host);
   }
 
