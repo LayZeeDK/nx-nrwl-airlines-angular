@@ -20,15 +20,9 @@ function getImportPathOrThrow(
     projectRoot,
   }: { readonly projectName: string; readonly projectRoot: string }
 ): string {
-  const tsconfigBaseFilePath = 'tsconfig.base.json';
-
-  if (!host.exists(tsconfigBaseFilePath)) {
-    throw new Error(`${tsconfigBaseFilePath} is missing`);
-  }
-
   const tsconfigBaseJson = readJson<TsconfigBaseJson>(
     host,
-    tsconfigBaseFilePath
+    'tsconfig.base.json'
   );
   const pathMap = tsconfigBaseJson.compilerOptions.paths ?? {};
   const maybePathEntry = Object.entries(pathMap).find(([, publicApis]) =>

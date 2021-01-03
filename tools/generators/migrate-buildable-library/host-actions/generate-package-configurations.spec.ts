@@ -198,7 +198,7 @@ describe(generatePackageConfigurations.name, () => {
       const act = () => generatePackageConfigurations(host, options);
 
       await expect(act).rejects.toThrowError(
-        `${tsconfigBaseFilePath} is missing`
+        `Cannot find ${tsconfigBaseFilePath}`
       );
     });
 
