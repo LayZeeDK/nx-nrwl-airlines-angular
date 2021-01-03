@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "id": "migrate-angular-workspace-library-to-buildable-library",
+  "title": "Migrate non-buildable Angular workspace library to buildable workspace library.",
+  "type": "object",
+  "properties": {
+    "enableIvy": {
+      "type": "boolean",
+      "description": "Enable incremental Angular Ivy compilation? (default: true)",
+      "default": true
+    },
+    "projectName": {
+      "type": "string",
+      "description": "Angular library project name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "skipFormat": {
+      "type": "boolean",
+      "description": "Skip formatting files? (default: false)",
+      "default": false
+    }
+  },
+  "required": ["name"]
+}
