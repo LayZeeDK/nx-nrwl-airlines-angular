@@ -1,6 +1,7 @@
 import {
   addProjectConfiguration,
   ProjectConfiguration,
+  readJson,
   Tree,
 } from '@nrwl/devkit';
 import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
@@ -17,10 +18,6 @@ import {
 import { generatePackageConfigurations } from './generate-package-configurations';
 
 describe(generatePackageConfigurations.name, () => {
-  function readJsonFile<TJson = unknown>(filePath: string): TJson {
-    return JSON.parse(host.read(filePath)?.toString() ?? '{}');
-  }
-
   beforeEach(() => {
     host = createTreeWithEmptyWorkspace();
     projectName = 'shared-ui-buttons';
@@ -86,7 +83,7 @@ describe(generatePackageConfigurations.name, () => {
       await generatePackageConfigurations(host, options);
 
       expect(host.exists(filePath)).toBe(true);
-      const actualNgPackageJson: NgPackageJson = readJsonFile(filePath);
+      const actualNgPackageJson: NgPackageJson = readJson(host, filePath);
       expect(actualNgPackageJson).toEqual(expectedNgPackageJson);
     });
 
@@ -100,7 +97,7 @@ describe(generatePackageConfigurations.name, () => {
       await generatePackageConfigurations(host, options);
 
       expect(host.exists(filePath)).toBe(true);
-      const actualPackageJson: PackageJson = readJsonFile(filePath);
+      const actualPackageJson: PackageJson = readJson(host, filePath);
       expect(actualPackageJson).toEqual(expectedPackageJson);
     });
 
@@ -119,7 +116,7 @@ describe(generatePackageConfigurations.name, () => {
       await generatePackageConfigurations(host, options);
 
       expect(host.exists(filePath)).toBe(true);
-      const actualTsconfig: TsconfigJson = readJsonFile(filePath);
+      const actualTsconfig: TsconfigJson = readJson(host, filePath);
       expect(actualTsconfig).toEqual(expectedTsconfig);
     });
   });
@@ -142,7 +139,7 @@ describe(generatePackageConfigurations.name, () => {
 
       await generatePackageConfigurations(host, options);
 
-      const actualTsconfig: TsconfigJson = readJsonFile(filePath);
+      const actualTsconfig: TsconfigJson = readJson(host, filePath);
       expect(actualTsconfig.angularCompilerOptions).toEqual(
         expectedAngularCompilerOptions
       );
@@ -157,7 +154,7 @@ describe(generatePackageConfigurations.name, () => {
 
       await generatePackageConfigurations(host, options);
 
-      const actualTsconfig: TsconfigJson = readJsonFile(filePath);
+      const actualTsconfig: TsconfigJson = readJson(host, filePath);
       expect(actualTsconfig.angularCompilerOptions).toEqual(
         expectedAngularCompilerOptions
       );
