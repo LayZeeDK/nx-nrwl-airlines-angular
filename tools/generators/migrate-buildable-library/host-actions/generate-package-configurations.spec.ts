@@ -7,7 +7,6 @@ import {
   AngularCompilerOptions,
   BuildableLibraryPackageJson,
   NgPackageJson,
-  RootPackageJson,
   TsconfigBaseJson,
   TsconfigJson,
 } from '../types';
@@ -121,6 +120,55 @@ describe(generatePackageConfigurations.name, () => {
       const actualTsconfig: TsconfigJson = readJson(host, filePath);
       expect(actualTsconfig).toEqual(expectedTsconfig);
     });
+
+    it('keeps package configurations when they all exist', async () => {
+      const testConfiguration = { test: true };
+      const ngPackageJsonPath = path.join(
+        projectConfiguration.root,
+        'ng-package.json'
+      );
+      const packageJsonPath = path.join(
+        projectConfiguration.root,
+        'package.json'
+      );
+      const productionTsconfigPath = path.join(
+        projectConfiguration.root,
+        'tsconfig.lib.prod.json'
+      );
+      host.write(ngPackageJsonPath, JSON.stringify(testConfiguration));
+      host.write(packageJsonPath, JSON.stringify(testConfiguration));
+      host.write(productionTsconfigPath, JSON.stringify(testConfiguration));
+
+      await generatePackageConfigurations(host, options);
+
+      const ngPackageJson = readJson(host, ngPackageJsonPath);
+      const packageJson = readJson(host, packageJsonPath);
+      const productionTsconfig = readJson(host, productionTsconfigPath);
+      expect(ngPackageJson).toEqual(testConfiguration);
+      expect(packageJson).toEqual(testConfiguration);
+      expect(productionTsconfig).toEqual(testConfiguration);
+    });
+
+    it('overwrites package configurations when only some of them exist', async () => {
+      const testConfiguration = { test: true };
+      const ngPackageJsonPath = path.join(
+        projectConfiguration.root,
+        'ng-package.json'
+      );
+      const packageJsonPath = path.join(
+        projectConfiguration.root,
+        'package.json'
+      );
+      host.write(ngPackageJsonPath, JSON.stringify(testConfiguration));
+      host.write(packageJsonPath, JSON.stringify(testConfiguration));
+
+      await generatePackageConfigurations(host, options);
+
+      const ngPackageJson = readJson(host, ngPackageJsonPath);
+      const packageJson = readJson(host, packageJsonPath);
+      expect(ngPackageJson).not.toEqual(testConfiguration);
+      expect(packageJson).not.toEqual(testConfiguration);
+    });
   });
 
   describe('enableIvy option', () => {
@@ -160,35 +208,6 @@ describe(generatePackageConfigurations.name, () => {
       expect(actualTsconfig.angularCompilerOptions).toEqual(
         expectedAngularCompilerOptions
       );
-    });
-  });
-
-  describe('ng-packagr', () => {
-    it('installs ng-packagr when not installed', async () => {
-      await generatePackageConfigurations(host, options);
-
-      const { devDependencies = {} } = readJson<RootPackageJson>(
-        host,
-        'package.json'
-      );
-      expect(devDependencies['ng-packagr']).toBe('*');
-    });
-
-    it('leaves ng-packagr version intact when already installed', async () => {
-      const packageJson: RootPackageJson = {
-        devDependencies: {
-          ['ng-packagr']: '13.37.0',
-        },
-      };
-      host.write('package.json', JSON.stringify(packageJson));
-
-      await generatePackageConfigurations(host, options);
-
-      const { devDependencies = {} } = readJson<RootPackageJson>(
-        host,
-        'package.json'
-      );
-      expect(devDependencies['ng-packagr']).toBe('13.37.0');
     });
   });
 

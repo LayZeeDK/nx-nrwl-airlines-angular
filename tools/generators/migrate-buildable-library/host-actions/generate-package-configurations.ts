@@ -1,17 +1,8 @@
-import {
-  formatFiles,
-  generateFiles,
-  installPackagesTask,
-  offsetFromRoot,
-  readJson,
-  readProjectConfiguration,
-  Tree,
-} from '@nrwl/devkit';
+import { generateFiles, offsetFromRoot, readJson, readProjectConfiguration, Tree } from '@nrwl/devkit';
 import * as path from 'path';
 
 import { GeneratorOptions } from '../schema';
 import { FileTemplateReplacements, TsconfigBaseJson } from '../types';
-import { installNgPackagr } from './install-ng-packagr';
 
 function getImportPathOrThrow(
   host: Tree,
@@ -38,6 +29,22 @@ function getImportPathOrThrow(
   return importPath;
 }
 
+function hasPackageConfigurations(host: Tree, projectRoot: string): boolean {
+  if (!host.exists(path.join(projectRoot, 'ng-package.json'))) {
+    return false;
+  }
+
+  if (!host.exists(path.join(projectRoot, 'package.json'))) {
+    return false;
+  }
+
+  if (!host.exists(path.join(projectRoot, 'tsconfig.lib.prod.json'))) {
+    return false;
+  }
+
+  return true;
+}
+
 export async function generatePackageConfigurations(
   host: Tree,
   options: GeneratorOptions
@@ -54,19 +61,12 @@ export async function generatePackageConfigurations(
     tmpl: '',
   };
 
-  generateFiles(
-    host,
-    path.join(__dirname, '../files/package-configurations'),
-    projectConfiguration.root,
-    replacements
-  );
-  installNgPackagr(host);
-
-  if (!options.skipFormat) {
-    await formatFiles(host);
+  if (!hasPackageConfigurations(host, projectConfiguration.root)) {
+    generateFiles(
+      host,
+      path.join(__dirname, '../files/package-configurations'),
+      projectConfiguration.root,
+      replacements
+    );
   }
-
-  return () => {
-    installPackagesTask(host);
-  };
 }
