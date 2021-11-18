@@ -124,6 +124,11 @@
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nrwl/nx/javascript"],
       "rules": {}
+    },
+    {
+      "parser": "@typescript-eslint/parser",
+      "files": ["*.ts"],
+      "extends": ["plugin:ngrx/recommended"]
     }
   ]
 }
