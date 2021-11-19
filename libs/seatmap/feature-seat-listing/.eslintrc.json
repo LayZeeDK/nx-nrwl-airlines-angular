@@ -9,7 +9,7 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "parserOptions": {
-        "project": ["libs/shared/seatmap/feature-seat-listing/tsconfig.*?.json"]
+        "project": ["libs/seatmap/feature-seat-listing/tsconfig.*?.json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [

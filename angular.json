@@ -956,7 +956,8 @@
   },
   "cli": {
     "defaultCollection": "@nrwl/angular",
-    "packageManager": "pnpm"
+    "packageManager": "pnpm",
+    "analytics": false
   },
   "schematics": {
     "@nrwl/angular:application": {
